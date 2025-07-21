@@ -1,6 +1,6 @@
-# YouthConnect
+# GenSpark- Connect, Create & Capitalize
 
-**YouthConnect** is a comprehensive platform designed to bridge the gap between emerging startups and potential investors or evaluators. Built on a robust and scalable **microservices architecture**, the system provides a seamless experience for all users.
+**GenSpark** is a comprehensive platform designed to bridge the gap between emerging startups and potential investors or evaluators. Built on a robust and scalable **microservices architecture**, the system provides a seamless experience for all users.
 
 ## Key Features
 
@@ -40,7 +40,7 @@ The platform's architecture leverages **modern cloud-native technologies** to en
 
 ---
 
-YouthConnect offers a sophisticated, **feature-rich ecosystem** aimed at fostering innovation. It empowers the **next generation of entrepreneurs** by connecting them with the resources they need to **succeed**.
+GenSparkConnect offers a sophisticated, **feature-rich ecosystem** aimed at fostering innovation. It empowers the **next generation of entrepreneurs** by connecting them with the resources they need to **succeed**.
 
 ---
 
