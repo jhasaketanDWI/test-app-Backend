@@ -55,7 +55,7 @@ const Home = () => {
       {/* Animated Background at lowest z-index */}
       <BackgroundAnimation />
       {/* All content above background */}
-      <Box sx={theme => ({ position: 'relative', zIndex: 2, minHeight: '100vh', color: theme.palette.text.primary, px: { xs: 2, md: 8 }, pt: '96px', pb: '80px', background: 'none' })}>
+      <Box sx={theme => ({ position: 'relative', zIndex: 2, minHeight: '100vh', color: theme.palette.text.primary, px: { xs: 2, md: 8 }, pt: '96px', pb: '80px', background: 'none', overflowX: 'hidden' })}>
         {/* Hero Section */}
         <ContentAnimation direction="left">
         <Box sx={{ textAlign: 'center', mb: 8 }}>

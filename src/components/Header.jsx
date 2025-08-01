@@ -56,10 +56,23 @@ const Header = ({ mode, setMode }) => {
 
   return (
     <AppBar position="sticky" sx={theme => ({ top: 0, zIndex: 1201, bgcolor: theme.palette.primary.main })}>
-      <Toolbar>
+      <Toolbar
+        sx={{
+          '& > :not(.MuiTypography-root)': {
+            fontSize: '12px !important',
+          },
+        }}
+      >
         <Typography
           variant="h6"
-          sx={theme => ({ flexGrow: 1, color: theme.palette.secondary.main, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 1 })}
+          sx={theme => ({ 
+            flexGrow: 1, 
+            color: theme.palette.secondary.main, 
+            cursor: 'pointer', 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: 1,
+           })}
           onClick={() => navigate('/')}
         >
           <BsStars style={{ fontSize: 24, marginRight: 6, color: '#a259ff' }} />
