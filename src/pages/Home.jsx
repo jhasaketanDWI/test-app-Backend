@@ -60,7 +60,7 @@ const Home = () => {
         <ContentAnimation direction="left">
         <Box sx={{ textAlign: 'center', mb: 8 }}>
         <Typography variant="h2" fontWeight={700} gutterBottom>
-          Fueling Innovation. Empowering Growth.
+          Connect, Create, Capitalize.
         </Typography>
         <Typography variant="h5" sx={theme => ({ color: theme.palette.text.primary })} gutterBottom>
           India’s Smartest Startup & Investor Network
