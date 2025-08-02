@@ -227,76 +227,54 @@ const Register = () => {
       <BackgroundAnimation />
       <Box sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 2 }}>
         <Card ref={cardRef} elevation={8} sx={{
-          borderRadius: 0,
+          borderRadius:5,
           boxShadow: 'none',
           background: 'linear-gradient(145deg, #ffffff, #f8f8f8, #f0f0f0, #f8f8f8)',
           boxSizing: 'border-box',
           transformStyle: 'preserve-3d',
-          width: { xs: '100%', sm: 420, md: 480 },
-          maxWidth: 600,
-          minWidth: 320,
-          px: { xs: 2, sm: 4 },
-          py: 3,
+          width: { xs: '100%', sm: 320, md: 340 },
+          maxWidth: 360,
+          minWidth: 220,
+          px: { xs: 1, sm: 2 },
+          py: 2,
           mx: 'auto',
           overflow: 'visible',
           minHeight: 340,
           position: 'relative',
           zIndex: 10,
           transition: 'none',
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            right: -50,
-            width: '50px',
-            height: '100%',
-            background: 'linear-gradient(135deg, #fff 80%, #e0e0e0 100%)',
-            boxShadow: `inset 2px 0 4px rgba(0,0,0,0.08),inset -2px 0 4px rgba(0,0,0,0.10),0 0 8px rgba(180,180,180,0.10)`,
-            transformOrigin: 'left center',
-            transform: 'rotateY(90deg)',
-            borderRadius: '0 8px 8px 0',
-            zIndex: -1,
-          },
-          '&::after': {
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            left: -50,
-            width: '50px',
-            height: '100%',
-            background: 'linear-gradient(225deg, #fff 80%, #e0e0e0 100%)',
-            boxShadow: 'inset -2px 0 4px rgba(0,0,0,0.08),inset 2px 0 4px rgba(0,0,0,0.10),0 0 8px rgba(180,180,180,0.10)',
-            borderRadius: '8px 0 0 8px',
-            zIndex: 1,
-            pointerEvents: 'none',
-            transformOrigin: 'right center',
-            transform: 'rotateY(-90deg)',
-          },
-          '&::bottom': {
-            content: '""',
-            position: 'absolute',
-            bottom: -50,
-            left: 0,
-            right: 0,
-            height: '50px',
-            background: 'linear-gradient(0deg, #fff 80%, #e0e0e0 100%)',
-            boxShadow: `inset 0 2px 4px rgba(0,0,0,0.08),inset 0 -2px 4px rgba(0,0,0,0.10),0 0 8px rgba(180,180,180,0.10)`,
-            transformOrigin: 'center top',
-            transform: 'rotateX(-90deg)',
-            borderRadius: '0 0 8px 8px',
-            zIndex: -2,
-          },
         }}>
           <Typography ref={titleRef} variant="h5" align="center" sx={{ mb: 2.5, fontWeight: 700, color: '#333', textShadow: '0 2px 8px rgba(0,0,0,0.2)', fontSize: 20, minHeight: 30, perspective: '1000px', transformStyle: 'preserve-3d', zIndex: 2, position: 'relative' }}>
-            Register
+            Create an account now!
           </Typography>
-          <form ref={formRef} onSubmit={handleRegister} autoComplete="off" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <form ref={formRef} onSubmit={handleRegister} autoComplete="off" style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
             <Box sx={{ display: 'flex', gap: 1, mb: 1, justifyContent: 'center' }}>
               <Button variant={role === 'investor' ? 'contained' : 'outlined'} size="small" sx={{ fontWeight: 600, borderRadius: 2, bgcolor: role === 'investor' ? '#a259ff' : '#fff', color: role === 'investor' ? '#fff' : '#a259ff', borderColor: '#a259ff', '&:hover': { bgcolor: '#a259ff', color: '#fff', borderColor: '#a259ff' } }} onClick={e => { e.preventDefault(); setRole('investor'); }}>Investor</Button>
               <Button variant={role === 'entrepreneur' ? 'contained' : 'outlined'} size="small" sx={{ fontWeight: 600, borderRadius: 2, bgcolor: role === 'entrepreneur' ? '#a259ff' : '#fff', color: role === 'entrepreneur' ? '#fff' : '#a259ff', borderColor: '#a259ff', '&:hover': { bgcolor: '#a259ff', color: '#fff', borderColor: '#a259ff' } }} onClick={e => { e.preventDefault(); setRole('entrepreneur'); }}>Entrepreneur</Button>
             </Box>
             <TextField placeholder="Full Name" type="text" fullWidth required value={name} onChange={e => setName(e.target.value)} variant="outlined" sx={{ mb: 1, background: 'transparent', borderRadius: 2, input: { color: '#333', fontSize: 14, py: 0.8 }, minHeight: 36, fontSize: 14, transition: 'all 0.3s ease', zIndex: 2, position: 'relative', '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: '#4a90e2' }, '&:hover fieldset': { borderColor: '#4a90e2' }, '&.Mui-focused fieldset': { borderColor: '#4a90e2' } } }} InputLabelProps={{ shrink: false }} />
-            <TextField placeholder="Phone" type="tel" fullWidth required value={phone} onChange={e => setPhone(e.target.value)} variant="outlined" sx={{ mb: 1, background: 'transparent', borderRadius: 2, input: { color: '#333', fontSize: 14, py: 0.8 }, minHeight: 36, fontSize: 14, transition: 'all 0.3s ease', zIndex: 2, position: 'relative', '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: '#4a90e2' }, '&:hover fieldset': { borderColor: '#4a90e2' }, '&.Mui-focused fieldset': { borderColor: '#4a90e2' } } }} InputLabelProps={{ shrink: false }} />
+            <TextField 
+              placeholder="Phone" 
+              type="tel" 
+              fullWidth 
+              required 
+              value={phone} 
+              onChange={e => setPhone(e.target.value)} 
+              variant="outlined" 
+              sx={{ mb: 1, background: 'transparent', borderRadius: 2, input: { color: '#333', fontSize: 14, py: 0.8 }, minHeight: 36, fontSize: 14, transition: 'all 0.3s ease', zIndex: 2, position: 'relative', '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: '#4a90e2' }, '&:hover fieldset': { borderColor: '#4a90e2' }, '&.Mui-focused fieldset': { borderColor: '#4a90e2' } } }} 
+              InputLabelProps={{ shrink: false }}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end" sx={{ mr: 1 }}>
+                    {phoneVerified ? (
+                      <CheckCircle fontSize="small" sx={{ color: 'green' }} />
+                    ) : (
+                      <ErrorOutline fontSize="small" sx={{ color: '#b71c1c' }} />
+                    )}
+                  </InputAdornment>
+                )
+              }}
+            />
             {!phoneVerified && (
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
                 <Button variant="outlined" size="small" sx={{ color: '#a259ff', borderColor: '#a259ff', fontWeight: 600, borderRadius: 2, '&:hover': { bgcolor: '#a259ff', color: '#fff', borderColor: '#a259ff' } }} onClick={handleSendPhoneOtp} disabled={phoneOtpSent || !phone}>
@@ -312,7 +290,28 @@ const Register = () => {
                 )}
               </Box>
             )}
-            <TextField placeholder="Email" type="email" fullWidth required value={email} onChange={e => setEmail(e.target.value)} variant="outlined" sx={{ mb: 1, background: 'transparent', borderRadius: 2, input: { color: '#333', fontSize: 14, py: 0.8 }, minHeight: 36, fontSize: 14, transition: 'all 0.3s ease', zIndex: 2, position: 'relative', '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: '#4a90e2' }, '&:hover fieldset': { borderColor: '#4a90e2' }, '&.Mui-focused fieldset': { borderColor: '#4a90e2' } } }} InputLabelProps={{ shrink: false }} />
+            <TextField 
+              placeholder="Email" 
+              type="email" 
+              fullWidth 
+              required 
+              value={email} 
+              onChange={e => setEmail(e.target.value)} 
+              variant="outlined" 
+              sx={{ mb: 1, background: 'transparent', borderRadius: 2, input: { color: '#333', fontSize: 14, py: 0.8 }, minHeight: 36, fontSize: 14, transition: 'all 0.3s ease', zIndex: 2, position: 'relative', '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: '#4a90e2' }, '&:hover fieldset': { borderColor: '#4a90e2' }, '&.Mui-focused fieldset': { borderColor: '#4a90e2' } } }} 
+              InputLabelProps={{ shrink: false }}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end" sx={{ mr: 1 }}>
+                    {emailVerified ? (
+                      <CheckCircle fontSize="small" sx={{ color: 'green' }} />
+                    ) : (
+                      <ErrorOutline fontSize="small" sx={{ color: '#b71c1c' }} />
+                    )}
+                  </InputAdornment>
+                )
+              }}
+            />
             {phoneVerified && !emailVerified && (
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
                 <Button variant="outlined" size="small" sx={{ color: '#a259ff', borderColor: '#a259ff', fontWeight: 600, borderRadius: 2, '&:hover': { bgcolor: '#a259ff', color: '#fff', borderColor: '#a259ff' } }} onClick={handleSendEmailOtp} disabled={emailOtpSent || !email}>
@@ -329,7 +328,7 @@ const Register = () => {
               </Box>
             )}
             <Collapse in={!!otpError}><Alert severity="error" sx={{ mb: 1 }}>{otpError}</Alert></Collapse>
-            <Collapse in={!!otpSuccess}><Alert severity="success" sx={{ mb: 1 }}>{otpSuccess}</Alert></Collapse>
+            {/* Removed phone/email OTP verified success message */}
             <Collapse in={!!registerError}><Alert severity="error" sx={{ mb: 1 }}>{registerError}</Alert></Collapse>
             <Collapse in={!!registerSuccess}><Alert severity="success" sx={{ mb: 1 }}>{registerSuccess}</Alert></Collapse>
             <PasswordField
