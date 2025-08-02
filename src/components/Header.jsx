@@ -29,10 +29,12 @@ const Header = ({ mode, setMode }) => {
   }, []);
 
   const handleLogout = () => {
-    authLogout();
-    setUser(null);
-    setRole(null);
-    navigate('/login');
+    if (window.confirm('Are you sure you want to logout?')) {
+      authLogout();
+      setUser(null);
+      setRole(null);
+      navigate('/login');
+    }
   };
 
   const isAdmin = role === 'admin';
