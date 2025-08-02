@@ -20,11 +20,7 @@ const ContentAnimation = ({ children, direction = 'left', delay = 0 }) => {
       ref={ref}
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible
-          ? 'none'
-          : direction === 'left'
-          ? 'translateX(-80px)'
-          : 'translateX(80px)',
+        transform: isVisible ? 'none' : 'translateX(-80px)',
         transition: `all 0.8s cubic-bezier(.77,0,.18,1) ${delay}s`,
         willChange: 'opacity, transform',
       }}
