@@ -5,6 +5,7 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { BsInfoCircle, BsBarChart, BsCurrencyDollar, BsBoxArrowInRight, BsStars, BsSpeedometer2, BsEnvelope, BsPerson, BsBoxArrowRight, BsClipboardData, BsPeople, BsMegaphone } from 'react-icons/bs';
 import { useNavigate, useLocation } from 'react-router-dom';
+import mylogo from '../assets/images/mylogo.png';
 
 
 const Header = ({ mode, setMode }) => {
@@ -77,7 +78,18 @@ const Header = ({ mode, setMode }) => {
            })}
           onClick={() => navigate('/')}
         >
-          <BsStars style={{ fontSize: 24, marginRight: 6, color: '#a259ff' }} />
+          <img
+            src={mylogo}
+            alt="GenSpark logo"
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: '50%',
+              marginRight: 8,
+              objectFit: 'cover',
+              background: 'transparent',
+            }}
+          />
           GenSpark
         </Typography>
         {/* Admin dropdown menu for navigation */}

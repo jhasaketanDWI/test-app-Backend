@@ -1,4 +1,5 @@
 import React from 'react';
+import mylogo from '../assets/images/mylogo.png';
 import { Box, Typography, Link } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
@@ -35,10 +36,18 @@ const Footer = () => {
           {/* Logo, Name, Tagline */}
           <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', md: 'flex-start' }, mr: { md: 3 } }}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              {/* Placeholder for logo */}
-              <Box sx={theme => ({ width: 40, height: 40, bgcolor: theme.palette.secondary.main, borderRadius: '50%', mr: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' })}>
-                <Typography variant="h6" sx={theme => ({ color: theme.palette.primary.main, fontWeight: 900, fontSize: 22 })}>G</Typography>
-              </Box>
+              <img
+                src={mylogo}
+                alt="GenSpark logo"
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: '50%',
+                  marginRight: 16,
+                  objectFit: 'cover',
+                  background: 'transparent',
+                }}
+              />
               <Typography variant="h6" sx={{ fontWeight: 700, letterSpacing: 1 }}>GenSpark</Typography>
             </Box>
             <Typography variant="subtitle2" sx={{ color: '#a259ff', fontWeight: 600, letterSpacing: 1, mt: 0.5 }}>
