@@ -22,11 +22,11 @@ const Login = () => {
   const pageTitle = isAdminLogin ? "Admin Portal" : "Login";
 
   useEffect(() => {
+    // Restore card rotation animation, keep card flat (no 3D faces)
     const card = cardRef.current;
     const title = titleRef.current;
     const formElements = formRef.current?.children;
     if (card && title) {
-      // Initial state - solid white box, no rotation, with shadow
       gsap.set(card, {
         scale: 1,
         opacity: 1,
@@ -49,11 +49,9 @@ const Login = () => {
           y: 20
         });
       }
-      // Animation timeline - morph from white box to 3D card
+      // Animation timeline - rotate card for effect
       const tl = gsap.timeline({ delay: 0.1 });
       tl.to(card, {
-        background: 'linear-gradient(145deg, #ffffff, #f8f8f8, #f0f0f0, #f8f8f8)',
-        boxShadow: 'none',
         rotateX: 60,
         rotateY: 45,
         rotateZ: 15,
@@ -145,11 +143,10 @@ const Login = () => {
       <BackgroundAnimation />
       <Box sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 2 }}>
         <Card ref={cardRef} className="form-card" elevation={8} sx={{
-          borderRadius: 0,
+          borderRadius: 3,
           boxShadow: 'none',
           background: 'linear-gradient(145deg, #ffffff, #f8f8f8, #f0f0f0, #f8f8f8)',
           boxSizing: 'border-box',
-          transformStyle: 'preserve-3d',
           width: { xs: '100%', sm: 280, md: 320 },
           maxWidth: 320,
           minWidth: 240,
@@ -161,52 +158,6 @@ const Login = () => {
           position: 'relative',
           zIndex: 10,
           transition: 'none',
-          '&::before': {
-            // Right face
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            right: -50,
-            width: '50px',
-            height: '100%',
-            background: 'linear-gradient(135deg, #fff 80%, #e0e0e0 100%)',
-            boxShadow: `inset 2px 0 4px rgba(0,0,0,0.08),inset -2px 0 4px rgba(0,0,0,0.10),0 0 8px rgba(180,180,180,0.10)`,
-            transformOrigin: 'left center',
-            transform: 'rotateY(90deg)',
-            borderRadius: '0 8px 8px 0',
-            zIndex: -1,
-          },
-          '&::after': {
-            // Left face
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            left: -50,
-            width: '50px',
-            height: '100%',
-            background: 'linear-gradient(225deg, #fff 80%, #e0e0e0 100%)',
-            boxShadow: 'inset -2px 0 4px rgba(0,0,0,0.08),inset 2px 0 4px rgba(0,0,0,0.10),0 0 8px rgba(180,180,180,0.10)',
-            borderRadius: '8px 0 0 8px',
-            zIndex: 1,
-            pointerEvents: 'none',
-            transformOrigin: 'right center',
-            transform: 'rotateY(-90deg)',
-          },
-          '&::bottom': {
-            // Bottom face
-            content: '""',
-            position: 'absolute',
-            bottom: -50,
-            left: 0,
-            right: 0,
-            height: '50px',
-            background: 'linear-gradient(0deg, #fff 80%, #e0e0e0 100%)',
-            boxShadow: `inset 0 2px 4px rgba(0,0,0,0.08),inset 0 -2px 4px rgba(0,0,0,0.10),0 0 8px rgba(180,180,180,0.10)`,
-            transformOrigin: 'center top',
-            transform: 'rotateX(-90deg)',
-            borderRadius: '0 0 8px 8px',
-            zIndex: -2,
-          },
         }}>
           <Typography ref={titleRef} className="form-title" variant="h5" align="center" sx={{
             mb: 2.5,
@@ -373,7 +324,7 @@ const Login = () => {
               variant="text"
               size="small"
               sx={{ color: '#4a90e2', fontWeight: 500, textTransform: 'none', letterSpacing: 0, '&:hover': { textDecoration: 'underline', bgcolor: 'transparent' } }}
-              onClick={() => navigate('/password-change')}
+              onClick={() => navigate('/password-change?mode=forgot')}
             >
               Forgot Password?
             </Button>
