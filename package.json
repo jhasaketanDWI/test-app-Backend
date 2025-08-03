@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "GenSpark MVP web platform",
   "main": "src/main.jsx",
-  "homepage": "https://dasranjan17.github.io/GenSpark3-0",
+  "homepage": "https://dasranjan17.github.io/GenSpark",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -19,6 +19,9 @@
     "bootstrap-icons": "^1.13.1",
     "gh-pages": "^6.3.0",
     "gsap": "^3.13.0",
+    "jwt-decode": "^4.0.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.7.1"
   },

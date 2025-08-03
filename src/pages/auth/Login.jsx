@@ -6,6 +6,7 @@ import { Box, Typography, TextField, Button, InputAdornment, IconButton, Card } 
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
+import authService from '../../services/authService';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -98,42 +99,18 @@ const Login = () => {
     setError("");
     setLoading(true);
     setTimeout(() => {
+      const user = authService.login(email, password);
       setLoading(false);
-      // Try to find user by email or phone in localStorage
-      let user = null;
-      if (email) {
-        user = localStorage.getItem(`user_${email.toLowerCase()}`);
-        if (!user && /^\d{10,}$/.test(email.replace(/[^\d]/g, ''))) {
-          user = localStorage.getItem(`user_${email}`);
-        }
-      }
       if (user) {
-        try {
-          const userData = JSON.parse(user);
-          if (userData.password === password) {
-            // Set currentUser for header
-            localStorage.setItem('currentUser', JSON.stringify(userData));
-            if (userData.role === 'entrepreneur') {
-              navigate('/entrepreneur/dashboard');
-              return;
-            } else if (userData.role === 'investor') {
-              navigate('/investor/dashboard');
-              return;
-            } else if (userData.role === 'admin') {
-              navigate('/admin/dashboard');
-              return;
-            }
-          } else {
-            setError('Invalid password.');
-            return;
-          }
-        } catch {
-          setError('Login error.');
-          return;
+        if (user.role === 'entrepreneur') {
+          navigate('/entrepreneur/dashboard');
+        } else if (user.role === 'investor') {
+          navigate('/investor/dashboard');
+        } else if (user.role === 'admin') {
+          navigate('/admin/dashboard');
         }
       } else {
-        setError('User not found.');
-        return;
+        setError('Invalid email or password.');
       }
     }, 1200);
   };

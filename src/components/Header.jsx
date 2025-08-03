@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { isAuthenticated, getCurrentUser, getUserRole, logout as authLogout } from '../services/authService';
+import authService from '../services/authService';
 import { AppBar, Toolbar, Typography, Button, IconButton, Tooltip, MenuItem, FormControl, Select, InputLabel } from '@mui/material';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
@@ -11,19 +11,22 @@ import mylogo from '../assets/images/mylogo.png';
 const Header = ({ mode, setMode }) => {
   const navigate = useNavigate();
   const isLight = mode === 'light';
-  const [user, setUser] = useState(getCurrentUser());
-  const [role, setRole] = useState(getUserRole());
+  const [user, setUser] = useState(authService.getCurrentUser());
+  const [role, setRole] = useState(user?.role);
   const location = useLocation();
 
   // Update user/role on route change or storage event
   useEffect(() => {
-    setUser(getCurrentUser());
-    setRole(getUserRole());
+    const currentUser = authService.getCurrentUser();
+    setUser(currentUser);
+    setRole(currentUser?.role);
   }, [location]);
+  
   useEffect(() => {
     const syncUser = () => {
-      setUser(getCurrentUser());
-      setRole(getUserRole());
+      const currentUser = authService.getCurrentUser();
+      setUser(currentUser);
+      setRole(currentUser?.role);
     };
     window.addEventListener('storage', syncUser);
     return () => window.removeEventListener('storage', syncUser);
@@ -31,7 +34,7 @@ const Header = ({ mode, setMode }) => {
 
   const handleLogout = () => {
     if (window.confirm('Are you sure you want to logout?')) {
-      authLogout();
+      authService.logout();
       setUser(null);
       setRole(null);
       navigate('/login');
@@ -92,6 +95,7 @@ const Header = ({ mode, setMode }) => {
           />
           GenSpark
         </Typography>
+        
         {/* Admin dropdown menu for navigation */}
         {user && isAdmin && (
           <FormControl sx={{ minWidth: 180, mr: 2 }} size="small">
@@ -112,6 +116,7 @@ const Header = ({ mode, setMode }) => {
             </Select>
           </FormControl>
         )}
+        
         <Button
           sx={theme => ({
             color: theme.palette.secondary.main,
@@ -146,6 +151,7 @@ const Header = ({ mode, setMode }) => {
         >
           <BsInfoCircle style={{ fontSize: 18, marginRight: 4 }} /> About
         </Button>
+        
         {/* Show Raise only for not logged in or entrepreneur */}
         {(!user || isEntrepreneur) && !isAdmin && (
           <Button
@@ -183,6 +189,7 @@ const Header = ({ mode, setMode }) => {
             <BsBarChart style={{ fontSize: 18, marginRight: 4 }} /> Raise
           </Button>
         )}
+        
         {/* Show Invest only for not logged in or investor */}
         {(!user || isInvestor) && !isAdmin && (
           <Button
@@ -220,6 +227,7 @@ const Header = ({ mode, setMode }) => {
             <BsCurrencyDollar style={{ fontSize: 18, marginRight: 4 }} /> Invest
           </Button>
         )}
+        
         {/* Entrepreneur Dashboard button */}
         {user && isEntrepreneur && !isAdmin && (
           <Button
@@ -258,6 +266,7 @@ const Header = ({ mode, setMode }) => {
             <BsSpeedometer2 style={{ fontSize: 18, marginRight: 4 }} /> Dashboard
           </Button>
         )}
+        
         {/* Investor Dashboard button */}
         {user && isInvestor && !isAdmin && (
           <Button
@@ -296,6 +305,7 @@ const Header = ({ mode, setMode }) => {
             <BsSpeedometer2 style={{ fontSize: 18, marginRight: 4 }} /> Dashboard
           </Button>
         )}
+        
         {/* Messages, Profile, Logout for logged in users */}
         {user && (
           <>
@@ -338,6 +348,7 @@ const Header = ({ mode, setMode }) => {
             >
               <BsEnvelope style={{ fontSize: 17, marginRight: 3 }} /> Messages
             </Button>
+            
             {(!isAdmin) && (
               <Button
                 sx={theme => ({
@@ -378,11 +389,22 @@ const Header = ({ mode, setMode }) => {
                 <BsPerson style={{ fontSize: 17, marginRight: 3 }} /> Profile
               </Button>
             )}
-            <Button sx={theme => ({ color: theme.palette.secondary.main, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 1 })} onClick={handleLogout}>
+            
+            <Button 
+              sx={theme => ({ 
+                color: theme.palette.secondary.main, 
+                fontWeight: 600, 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: 1 
+              })} 
+              onClick={handleLogout}
+            >
               <BsBoxArrowRight style={{ fontSize: 17, marginRight: 3 }} /> Logout
             </Button>
           </>
         )}
+        
         {/* Login for not logged in users */}
         {!user && (
           <Button
@@ -420,6 +442,7 @@ const Header = ({ mode, setMode }) => {
             <BsBoxArrowInRight style={{ fontSize: 18, marginRight: 4 }} /> Login
           </Button>
         )}
+        
         <Tooltip title={isLight ? 'Switch to dark mode' : 'Switch to light mode'}>
           <IconButton
             onClick={() => setMode(isLight ? 'dark' : 'light')}

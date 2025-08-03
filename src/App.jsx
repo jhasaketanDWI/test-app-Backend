@@ -2,6 +2,7 @@ import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ProtectedRoute from './components/ProtectedRoute';
 import Home from './pages/Home';
 import Raise from './pages/entrepreneur/Raise';
 import EntrepreneurDashboard from './pages/entrepreneur/EntrepreneurDashboard';
@@ -75,25 +76,29 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/raise" element={<Raise />} />
-          <Route path="/entrepreneur/dashboard" element={<EntrepreneurDashboard />} />
-          <Route path="/entrepreneur/profile" element={<EntrepreneurProfile />} />
-          <Route path="/entrepreneur/messages" element={<EntrepreneurMessages />} />
-          <Route path="/invest" element={<Invest />} />
-          <Route path="/investor/messages" element={<InvestorMessages />} />
-          <Route path="/investor/profile" element={<InvestorProfile />} />
-          <Route path="/investor/passwordchange" element={<PasswordChange />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/password-change" element={<PasswordChange />} />
-          <Route path="/entrepreneur/auth/passwordchange" element={<PasswordChange />} />
-          <Route path="/investor/dashboard" element={<InvestorDashboard />} />
-          {/* Admin routes */}
-          {/* <Route path="/admin/user-management" element={<UserManagament />} /> */}
-          <Route path="/admin/dashboard" element={<AdminDashboard mode={mode} setMode={setMode} />} />
-          <Route path="/admin/platform-overview" element={<PlatformOverview />} />
-          <Route path="/admin/admin-messages" element={<AdminMessages />} />
-          <Route path="/admin/platform-management" element={<PlatformManagament />} />
+          
+          {/* Protected entrepreneur routes */}
+          <Route path="/raise" element={<ProtectedRoute allowedRoles={['entrepreneur']}><Raise /></ProtectedRoute>} />
+          <Route path="/entrepreneur/dashboard" element={<ProtectedRoute allowedRoles={['entrepreneur']}><EntrepreneurDashboard /></ProtectedRoute>} />
+          <Route path="/entrepreneur/profile" element={<ProtectedRoute allowedRoles={['entrepreneur']}><EntrepreneurProfile /></ProtectedRoute>} />
+          <Route path="/entrepreneur/messages" element={<ProtectedRoute allowedRoles={['entrepreneur']}><EntrepreneurMessages /></ProtectedRoute>} />
+          <Route path="/entrepreneur/auth/passwordchange" element={<ProtectedRoute allowedRoles={['entrepreneur']}><PasswordChange /></ProtectedRoute>} />
+          
+          {/* Protected investor routes */}
+          <Route path="/invest" element={<ProtectedRoute allowedRoles={['investor']}><Invest /></ProtectedRoute>} />
+          <Route path="/investor/dashboard" element={<ProtectedRoute allowedRoles={['investor']}><InvestorDashboard /></ProtectedRoute>} />
+          <Route path="/investor/messages" element={<ProtectedRoute allowedRoles={['investor']}><InvestorMessages /></ProtectedRoute>} />
+          <Route path="/investor/profile" element={<ProtectedRoute allowedRoles={['investor']}><InvestorProfile /></ProtectedRoute>} />
+          <Route path="/investor/passwordchange" element={<ProtectedRoute allowedRoles={['investor']}><PasswordChange /></ProtectedRoute>} />
+          
+          {/* Protected admin routes */}
+          <Route path="/admin/dashboard" element={<ProtectedRoute allowedRoles={['admin']}><AdminDashboard mode={mode} setMode={setMode} /></ProtectedRoute>} />
+          <Route path="/admin/platform-overview" element={<ProtectedRoute allowedRoles={['admin']}><PlatformOverview /></ProtectedRoute>} />
+          <Route path="/admin/admin-messages" element={<ProtectedRoute allowedRoles={['admin']}><AdminMessages /></ProtectedRoute>} />
+          <Route path="/admin/platform-management" element={<ProtectedRoute allowedRoles={['admin']}><PlatformManagament /></ProtectedRoute>} />
         </Routes>
         <Footer />
       </Router>

@@ -43,6 +43,7 @@ const summaryCards = [
 const AdminDashboard = ({ mode, setMode }) => {
   const theme = useTheme();
   const navigate = useNavigate();
+  
   // Get admin name from localStorage if available
   const adminName = useMemo(() => {
     try {
