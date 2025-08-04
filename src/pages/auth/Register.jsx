@@ -60,12 +60,8 @@ const Register = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
-  // Removed unused: otp, otpSent
-  const [phoneOtp, setPhoneOtp] = useState('');
   const [emailOtp, setEmailOtp] = useState('');
-  const [phoneVerified, setPhoneVerified] = useState(false);
   const [emailVerified, setEmailVerified] = useState(false);
-  const [phoneOtpSent, setPhoneOtpSent] = useState(false);
   const [emailOtpSent, setEmailOtpSent] = useState(false);
   const [otpError, setOtpError] = useState('');
   const [otpSuccess, setOtpSuccess] = useState('');
@@ -146,46 +142,25 @@ const Register = () => {
     }
   }, []);
 
-  const handleSendPhoneOtp = () => {
-    const phoneValid = /^\d{10,}$/.test(phone.replace(/[^\d]/g, ''));
-    if (!phoneValid) {
-      setOtpError('Enter a valid phone number');
-      setPhoneOtpSent(false);
-      return;
-    }
-    setPhoneOtpSent(true);
-    setOtpError('');
-    setTimeout(() => setPhoneOtp(''), 1000);
-  };
-
   const handleSendEmailOtp = () => {
     const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     if (!emailValid) {
       setOtpError('Enter a valid email');
       setEmailOtpSent(false);
+      setOtpSuccess('');
       return;
     }
     setEmailOtpSent(true);
     setOtpError('');
+    setOtpSuccess('OTP sent successfully to your email!');
     setTimeout(() => setEmailOtp(''), 1000);
-  };
-
-  const handleVerifyPhoneOtp = () => {
-    if (phoneOtp === '123456') {
-      setPhoneVerified(true);
-      setOtpError('');
-      setOtpSuccess('Phone OTP verified!');
-    } else {
-      setOtpError('Invalid phone OTP');
-      setOtpSuccess('');
-    }
   };
 
   const handleVerifyEmailOtp = () => {
     if (emailOtp === '123456') {
       setEmailVerified(true);
       setOtpError('');
-      setOtpSuccess('Email OTP verified!');
+      setOtpSuccess(''); // Remove success message when verified
     } else {
       setOtpError('Invalid email OTP');
       setOtpSuccess('');
@@ -263,33 +238,7 @@ const Register = () => {
               variant="outlined" 
               sx={{ mb: 1, background: 'transparent', borderRadius: 2, input: { color: '#333', fontSize: 14, py: 0.8 }, minHeight: 36, fontSize: 14, transition: 'all 0.3s ease', zIndex: 2, position: 'relative', '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: '#4a90e2' }, '&:hover fieldset': { borderColor: '#4a90e2' }, '&.Mui-focused fieldset': { borderColor: '#4a90e2' } } }} 
               InputLabelProps={{ shrink: false }}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end" sx={{ mr: 1 }}>
-                    {phoneVerified ? (
-                      <CheckCircle fontSize="small" sx={{ color: 'green' }} />
-                    ) : (
-                      <ErrorOutline fontSize="small" sx={{ color: '#b71c1c' }} />
-                    )}
-                  </InputAdornment>
-                )
-              }}
             />
-            {!phoneVerified && (
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
-                <Button variant="outlined" size="small" sx={{ color: '#a259ff', borderColor: '#a259ff', fontWeight: 600, borderRadius: 2, '&:hover': { bgcolor: '#a259ff', color: '#fff', borderColor: '#a259ff' } }} onClick={handleSendPhoneOtp} disabled={phoneOtpSent || !phone}>
-                  {phoneOtpSent ? 'OTP Sent' : 'Send OTP'}
-                </Button>
-                {phoneOtpSent && (
-                  <>
-                    <TextField placeholder="Enter OTP" type="text" value={phoneOtp} onChange={e => setPhoneOtp(e.target.value)} variant="outlined" sx={{ background: 'transparent', borderRadius: 2, input: { color: '#333', fontSize: 14, py: 0.8 }, minHeight: 36, fontSize: 14, width: 120, transition: 'all 0.3s ease', zIndex: 2, position: 'relative', '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: '#4a90e2' }, '&:hover fieldset': { borderColor: '#4a90e2' }, '&.Mui-focused fieldset': { borderColor: '#4a90e2' } } }} InputLabelProps={{ shrink: false }} />
-                    <Button variant="contained" size="small" sx={{ bgcolor: '#a259ff', color: '#fff', fontWeight: 700, borderRadius: 2, px: 2, '&:hover': { bgcolor: '#fff', color: '#a259ff' } }} onClick={handleVerifyPhoneOtp}>
-                      Verify
-                    </Button>
-                  </>
-                )}
-              </Box>
-            )}
             <TextField 
               placeholder="Email" 
               type="email" 
@@ -312,7 +261,7 @@ const Register = () => {
                 )
               }}
             />
-            {phoneVerified && !emailVerified && (
+            {!emailVerified && (
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
                 <Button variant="outlined" size="small" sx={{ color: '#a259ff', borderColor: '#a259ff', fontWeight: 600, borderRadius: 2, '&:hover': { bgcolor: '#a259ff', color: '#fff', borderColor: '#a259ff' } }} onClick={handleSendEmailOtp} disabled={emailOtpSent || !email}>
                   {emailOtpSent ? 'OTP Sent' : 'Send OTP'}
@@ -328,7 +277,7 @@ const Register = () => {
               </Box>
             )}
             <Collapse in={!!otpError}><Alert severity="error" sx={{ mb: 1 }}>{otpError}</Alert></Collapse>
-            {/* Removed phone/email OTP verified success message */}
+            <Collapse in={!!otpSuccess}><Alert severity="success" sx={{ mb: 1 }}>{otpSuccess}</Alert></Collapse>
             <Collapse in={!!registerError}><Alert severity="error" sx={{ mb: 1 }}>{registerError}</Alert></Collapse>
             <Collapse in={!!registerSuccess}><Alert severity="success" sx={{ mb: 1 }}>{registerSuccess}</Alert></Collapse>
             <PasswordField
