@@ -359,7 +359,7 @@ const Register = () => {
                 {passwordsMatch ? 'Passwords match' : 'Passwords do not match'}
               </Typography>
             )}
-            <Button type="submit" variant="contained" color="primary" disabled={loading || !emailVerified || !password || !confirmPassword} sx={{ fontWeight: 700, borderRadius: 2, py: 1.2, bgcolor: '#a259ff', color: '#fff', '&:hover': { bgcolor: '#fff', color: '#a259ff' } }}>
+            <Button type="submit" variant="contained" color="primary" disabled={loading} sx={{ fontWeight: 700, borderRadius: 2, py: 1.2, bgcolor: '#a259ff', color: '#fff', '&:hover': { bgcolor: '#fff', color: '#a259ff' } }}>
               {loading ? 'Registering...' : 'Register'}
             </Button>
             <Box sx={{ mt: 1, textAlign: 'center' }}>
