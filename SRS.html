@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenSpark-SRS Document</title>
+    
+    <!-- Google Fonts and Icons for Material Design -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <style>
+        /* --- CSS Variables for Material Design Palette --- */
+        :root {
+            --primary-color: #3f51b5; /* Indigo */
+            --primary-dark-color: #303f9f;
+            --accent-color: #ff4081; /* Pink */
+            --text-primary-color: #212121;
+            --text-secondary-color: #757575;
+            --background-color: #f4f5f7;
+            --card-background-color: #ffffff;
+            --divider-color: #e0e0e0;
+        }
+
+        /* --- General Setup --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary-color);
+            line-height: 1.7;
+        }
+
+        /* --- Layout: Sidebar and Main Content --- */
+        .sidebar {
+            width: 280px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: var(--card-background-color);
+            border-right: 1px solid var(--divider-color);
+            display: flex;
+            flex-direction: column;
+            z-index: 1000; /* Sidebar on top */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .main-content {
+            margin-left: 280px;
+            padding: 2rem 3rem;
+            width: calc(100% - 280px);
+            transition: margin-left 0.3s ease-in-out;
+        }
+
+        /* --- Sidebar Styling --- */
+        .sidebar-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--divider-color);
+        }
+
+        .sidebar-header h1 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        .sidebar-header p {
+            font-size: 0.9rem;
+            color: var(--text-secondary-color);
+            margin-top: 4px;
+        }
+        
+        .sidebar-nav {
+            list-style: none;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+
+        .sidebar-nav li a {
+            display: flex;
+            align-items: center;
+            padding: 12px 24px;
+            text-decoration: none;
+            color: var(--text-primary-color);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+            border-left: 4px solid transparent;
+        }
+        
+        .sidebar-nav li a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .sidebar-nav li a.active {
+            background-color: #e8eaf6; /* Indigo Light */
+            color: var(--primary-dark-color);
+            border-left-color: var(--primary-color);
+        }
+
+        .sidebar-nav .material-icons {
+            margin-right: 24px;
+            color: var(--text-secondary-color);
+            transition: color 0.2s ease-in-out;
+        }
+        
+        .sidebar-nav li a.active .material-icons {
+            color: var(--primary-dark-color);
+        }
+        
+        /* Mobile Header */
+        .mobile-header {
+            display: none; /* Hidden on desktop */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: var(--primary-dark-color);
+            color: #fff;
+            align-items: center;
+            padding: 0 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 999;
+        }
+        
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-title {
+            margin-left: 1rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        /* Overlay for mobile nav */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 998;
+        }
+
+        /* --- Main Content Styling --- */
+        .content-section {
+            padding-top: 1rem;
+        }
+
+        .card {
+            background-color: var(--card-background-color);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            margin-top: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--primary-dark-color);
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        h2 .material-icons {
+            font-size: 2.5rem;
+            margin-right: 1rem;
+        }
+        
+        h3 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            margin-top: 2.5rem;
+            color: var(--text-primary-color);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: 5px;
+            width: 5px;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        p, li {
+            font-size: 1rem;
+            color: var(--text-secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        ul li {
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        ul li::before {
+            content: '›';
+            position: absolute;
+            left: 5px;
+            top: -2px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        strong {
+            color: var(--text-primary-color);
+            font-weight: 500;
+        }
+        
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        /* --- Table Styling --- */
+        .table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            min-width: 600px; /* Ensure table has a min width to show scroll */
+        }
+
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--divider-color);
+        }
+
+        thead tr {
+            background-color: var(--primary-color);
+            color: #ffffff;
+        }
+        
+        thead th {
+            font-weight: 500;
+        }
+
+        tbody tr:nth-of-type(even) {
+            background-color: #f9f9f9;
+        }
+        
+        tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .diagram-container {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .diagram-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            background-color: #fff; /* In case of transparent PNGs */
+        }
+
+        .diagram-container a {
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-weight: 500;
+            color: var(--primary-dark-color);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 960px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+            .sidebar.is-open {
+                transform: translateX(0);
+                box-shadow: 3px 0 15px rgba(0,0,0,0.2);
+            }
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+                padding: 1.5rem;
+            }
+            .mobile-header {
+                display: flex;
+            }
+            body {
+                padding-top: 60px; /* Space for fixed mobile header */
+            }
+            .overlay.is-visible {
+                display: block;
+            }
+            h2 { font-size: 1.8rem; }
+            h3 { font-size: 1.4rem; }
+            .card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <button class="menu-toggle" id="menu-toggle">
+            <i class="material-icons">menu</i>
+        </button>
+        <span class="mobile-title">GenSpark SRS</span>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h1>GenSpark</h1>
+            <p>Software Requirements Specification</p>
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="#introduction" class="nav-link active"><i class="material-icons">flag</i>Introduction</a></li>
+            <li><a href="#description" class="nav-link"><i class="material-icons">visibility</i>Overall Description</a></li>
+            <li><a href="#requirements" class="nav-link"><i class="material-icons">list_alt</i>Specific Requirements</a></li>
+            <li><a href="#future" class="nav-link"><i class="material-icons">trending_up</i>Future Enhancements</a></li>
+            <li><a href="#architecture" class="nav-link"><i class="material-icons">layers</i>System Architecture</a></li>
+            <li><a href="#appendices" class="nav-link"><i class="material-icons">attachment</i>Appendices</a></li>
+        </ul>
+    </aside>
+    
+    <!-- Overlay for mobile nav -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- 1. Introduction -->
+        <section id="introduction" class="content-section">
+            <h2><i class="material-icons">flag</i>Introduction</h2>
+            <div class="card">
+                <h3>1.1 Purpose</h3>
+                <p>The purpose of this Software Requirements Specification (SRS) is to define the functional and non-functional requirements for the Minimum Viable Product (MVP) of the GenSpark platform. This document will serve as the guiding reference for the initial development phase. GenSpark (MVP) is a web platform designed to connect entrepreneurs with verified investors through video pitches and secure direct messaging, focusing on speed, simplicity, and core functionality.</p>
+
+                <h3>1.2 Scope</h3>
+                <p>The scope of the GenSpark MVP is to build and launch a core platform that validates the primary use case: connecting entrepreneurs and investors via video.</p>
+                <strong>In Scope (MVP Core Features):</strong>
+                <ul>
+                    <li>Simple, role-based user registration with profile completion indicators.</li>
+                    <li>Video pitch upload and management for Entrepreneurs, including status updates.</li>
+                    <li>A simple, admin-managed verification system for Investors.</li>
+                    <li>An interactive discovery page for Investors with Like, Watchlist, and Connection features.</li>
+                    <li>A private connection and communication system.</li>
+                    <li>A simplified meeting scheduler with reminders.</li>
+                    <li>A basic admin panel for user and verification management.</li>
+                </ul>
+                <strong>Out of Scope (Future Enhancements):</strong>
+                <ul>
+                    <li>Dual-role or role-switching functionality.</li>
+                    <li>AI-powered legal document and pitch deck generators.</li>
+                    <li>Advanced recommendation engines or analytics dashboards.</li>
+                    <li>Public comments, group chats, or file-sharing capabilities.</li>
+                    <li>In-app video calling or payment processing.</li>
+                </ul>
+
+                <h3>1.3 Definitions, Acronyms, and Abbreviations</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Acronym</th>
+                                <th>Expansion</th>
+                                <th>Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>AI</td><td>Artificial Intelligence</td><td>Computer systems able to perform tasks requiring human intelligence.</td></tr>
+                            <tr><td>AWS</td><td>Amazon Web Services</td><td>Cloud computing platform providing scalable services.</td></tr>
+                            <tr><td>FR</td><td>Functional Requirement</td><td>A statement of what the system must do.</td></tr>
+                            <tr><td>HTTPS</td><td>Hypertext Transfer Protocol Secure</td><td>Secure communication protocol for web traffic.</td></tr>
+                            <tr><td>JWT</td><td>JSON Web Token</td><td>A compact, secure means of representing claims between parties.</td></tr>
+                            <tr><td>MVP</td><td>Minimum Viable Product</td><td>A version of a product with just enough features to be usable by early customers.</td></tr>
+                            <tr><td>NFR</td><td>Non-Functional Requirement</td><td>A statement of how the system must perform a certain function.</td></tr>
+                            <tr><td>PDF</td><td>Portable Document Format</td><td>A platform-independent document format.</td></tr>
+                            <tr><td>PWA</td><td>Progressive Web App</td><td>A web application with native app-like features.</td></tr>
+                            <tr><td>REST API</td><td>Representational State Transfer API</td><td>An architectural style for designing networked applications.</td></tr>
+                            <tr><td>SRS</td><td>Software Requirements Specification</td><td>A document describing software system requirements.</td></tr>
+                            <tr><td>UI/UX</td><td>User Interface/User Experience</td><td>The design and experience of user interactions.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>1.4 References</h3>
+                <ul>
+                    <li>IEEE Std. 830-1998 – IEEE Recommended Practice for Software Requirements Specifications.</li>
+                    <li>OWASP Top 10 2021 – Critical web application security risks.</li>
+                    <li>Web Content Accessibility Guidelines (WCAG) 2.1.</li>
+                    <li>India's Digital Personal Data Protection Act, 2023.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 2. Overall Description -->
+        <section id="description" class="content-section">
+            <h2><i class="material-icons">visibility</i>Overall Description</h2>
+            <div class="card">
+                <h3>2.1 Product Perspective</h3>
+                <p>GenSpark (MVP) is a cloud-native web platform focused on a simple, three-step user journey: 1) Entrepreneurs upload video pitches, 2) Investors get verified and browse those pitches, and 3) Both parties connect via direct messaging and scheduling. The platform prioritizes a clean, uncluttered experience to facilitate meaningful connections quickly.</p>
+
+                <h3>2.2 User Characteristics</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User Role</th>
+                                <th>Description</th>
+                                <th>Goals on Platform</th>
+                                <th>Assumed Technical Expertise</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Entrepreneur</strong></td>
+                                <td>An individual or team seeking investment for their business idea.</td>
+                                <td>- Upload a compelling video pitch.<br>- Get discovered by verified investors.<br>- Communicate and schedule meetings.</td>
+                                <td>High. Comfortable with creating and uploading video content.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Investor</strong></td>
+                                <td>An individual or firm looking to invest in new ventures.</td>
+                                <td>- Discover curated pitches.<br>- Manage a watchlist of opportunities.<br>- Connect and schedule meetings.</td>
+                                <td>High. Proficient with digital platforms for deal sourcing.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Administrator</strong></td>
+                                <td>Platform staff responsible for platform integrity.</td>
+                                <td>- Manage the user base.<br>- Process investor verification requests.<br>- Ensure content quality.</td>
+                                <td>Expert. Full understanding of the admin backend.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>2.3 Constraints</h3>
+                <ul>
+                    <li><strong>Regulatory:</strong> Must comply with India's DPDP Act, 2023 for data handling.</li>
+                    <li><strong>Platform:</strong> The application will be a web-based platform only. Native mobile apps are not in scope for the MVP.</li>
+                    <li><strong>Simplicity:</strong> The primary constraint is to avoid feature creep and adhere strictly to the defined MVP scope to ensure a fast launch.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 3. Specific Requirements -->
+        <section id="requirements" class="content-section">
+            <h2><i class="material-icons">list_alt</i>Specific Requirements</h2>
+            <div class="card">
+                <h3>3.1 Functional Requirements</h3>
+                <p><strong>3.1.1 User Management</strong></p>
+                <ul>
+                    <li>The system shall provide a single registration page where a user must select a fixed role: "Entrepreneur" or "Investor".</li>
+                    <li>All new users shall be required to verify their email address before logging in.</li>
+                    <li>The system shall provide a secure login mechanism using email and password.</li>
+                    <li>Users shall be able to create and edit a basic profile (name, bio, profile picture, location).</li>
+                    <li>A user's role, once selected at registration, cannot be changed.</li>
+                    <li>The user dashboard shall display a profile completion indicator (e.g., a percentage bar) to encourage users to fill out their profiles.</li>
+                </ul>
+
+                <p><strong>3.1.2 Video Pitch System</strong></p>
+                <ul>
+                    <li>Entrepreneurs shall have a dashboard to upload, view, edit, and delete their video pitches.</li>
+                    <li>The video upload form shall accept a single video file (e.g., MP4 format, max size 100MB, max duration 3 minutes).</li>
+                    <li>The form shall include fields for: Business Name, Industry (dropdown), Funding Amount Sought, and a Short Description (max 500 characters).</li>
+                    <li>Entrepreneurs shall be able to set a status for their pitch from a predefined list (e.g., "Actively Seeking", "In Talks", "Closed").</li>
+                    <li>Uploaded pitches shall only be visible to verified Investors and Admins.</li>
+                </ul>
+                
+                <p><strong>3.1.3 Investor Verification System</strong></p>
+                <ul>
+                    <li>After registration, users with the "Investor" role shall be prompted to submit a single document for verification to unlock platform features.</li>
+                    <li>The verification form shall allow the upload of one file (e.g., PDF, JPG) or a link to a professional profile (e.g., LinkedIn).</li>
+                    <li>Admins shall have a queue in their dashboard to review pending verifications and approve or reject them within a 24-hour target window.</li>
+                    <li>Upon approval, the Investor account is marked as "Verified" with a visible badge on their profile, and they gain access to browse pitches.</li>
+                </ul>
+
+                <p><strong>3.1.4 Pitch Discovery & Interaction</strong></p>
+                <ul>
+                    <li>Verified Investors shall have access to a "Pitches" page displaying all published entrepreneur videos in a card-based layout.</li>
+                    <li>The page shall provide basic filter options: by Industry, Funding Amount, and Pitch Status.</li>
+                    <li>The page shall include a keyword search bar that searches the Business Name and Description fields.</li>
+                    <li>On each pitch card, an Investor shall have action buttons including "Like", "Add to Watchlist", and "Send Connection Request".</li>
+                    <li>The "Like" action shall be recorded. The number of likes is visible only to the entrepreneur and admins.</li>
+                    <li>The "Add to Watchlist" action shall save the pitch to a private list in the Investor's dashboard for later review.</li>
+                    <li>The "Send Connection Request" action shall send a notification to the Entrepreneur.</li>
+                </ul>
+
+                <p><strong>3.1.5 Connection & Communication</strong></p>
+                <ul>
+                    <li>Entrepreneurs shall receive connection requests from Investors in their dashboard and can "Accept" or "Decline" them.</li>
+                    <li>Once a connection is accepted, a private one-to-one chat channel shall be opened between the two users.</li>
+                    <li>The messaging system shall support text-only conversations.</li>
+                    <li>The system shall generate email notifications for new connection requests and unread messages.</li>
+                </ul>
+
+                <p><strong>3.1.6 Meeting Scheduler</strong></p>
+                <ul>
+                    <li>Within an active chat, either user can propose a meeting by selecting a date and time from a calendar interface.</li>
+                    <li>The system shall correctly handle and display time zones for both users.</li>
+                    <li>The other user shall be able to accept or decline the proposed meeting time.</li>
+                    <li>Once a meeting is confirmed, the system shall create an event visible to both users and send a confirmation email.</li>
+                    <li>The system shall send an automated reminder email to both users 1 hour before the scheduled meeting time.</li>
+                    <li>The meeting event details shall include a field for a meeting link, which users must generate and paste manually. The system will not generate the link itself.</li>
+                </ul>
+
+                <p><strong>3.1.7 Admin Panel</strong></p>
+                <ul>
+                    <li>Admins shall have a secure dashboard to view a list of all users.</li>
+                    <li>The dashboard shall feature a dedicated section for managing the investor verification queue (Approve/Reject).</li>
+                    <li>Admins shall have the ability to delete user accounts or video pitches if they violate platform policies.</li>
+                </ul>
+                
+                <h3>3.2 Non-Functional Requirements</h3>
+                <p><strong>3.2.1 Performance Requirements</strong></p>
+                 <ul>
+                    <li>The system shall support a minimum of 50 concurrent users.</li>
+                    <li>API response times shall be under 800ms on average.</li>
+                    <li>The platform's core pages shall load in under 5 seconds.</li>
+                </ul>
+
+                <p><strong>3.2.2 Security Requirements</strong></p>
+                 <ul>
+                    <li>The system shall use JWT-based authentication for all user sessions.</li>
+                    <li>All data in transit shall be encrypted using HTTPS.</li>
+                    <li>All user passwords shall be securely hashed and salted in the database.</li>
+                    <li>The system shall implement basic protections against the OWASP Top 10, including input validation to prevent XSS and parameterization to prevent SQL Injection.</li>
+                </ul>
+
+                <p><strong>3.2.3 Usability Requirements</strong></p>
+                 <ul>
+                    <li>The user interface shall be responsive and functional on modern desktop and mobile web browsers.</li>
+                    <li>Key user flows (uploading a pitch, verifying an account) must be simple and intuitive.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- 4. Future Enhancements -->
+        <section id="future" class="content-section">
+            <h2><i class="material-icons">trending_up</i>Future Enhancements (Post-MVP)</h2>
+            <div class="card">
+                <p>To guide the long-term vision, the following features are planned for future releases after the successful launch and validation of the MVP:</p>
+                <ul>
+                    <li><strong>AI-Powered Tools:</strong> A powerful Pitch Deck Generator and a Legal Document Generator.</li>
+                    <li><strong>Full-Featured Meeting Scheduler:</strong> Automatic generation of Google Meet/Zoom links and calendar integration.</li>
+                    <li><strong>Public Pitch Comments:</strong> A moderated public comment section on each pitch.</li>
+                    <li><strong>Flexible Roles:</strong> Allowing users to have both Entrepreneur and Investor roles under a single account.</li>
+                    <li><strong>Advanced Discovery:</strong> A recommendation engine to suggest relevant matches and advanced search filters.</li>
+                    <li><strong>Enhanced Communication:</strong> Group chats, file sharing, and integrated video calling.</li>
+                    <li><strong>Analytics:</strong> Dashboards for users and admins to track performance and engagement.</li>
+                    <li><strong>Mobile Applications:</strong> Native iOS and Android applications.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 5. System Design and Architecture -->
+        <section id="architecture" class="content-section">
+            <h2><i class="material-icons">layers</i>System Design and Architecture</h2>
+            <div class="card">
+                <h3>5.1 Architectural Style</h3>
+                <p>The GenSpark MVP will be built using a <strong>Three-Tier Architecture</strong>, which separates the application into three logical and physical computing tiers: the presentation tier, the application tier, and the data tier. This model is well-suited for a web application of this scale, promoting modularity, scalability, and ease of development. The entire system will be cloud-native, designed for deployment on Amazon Web Services (AWS).</p>
+                
+                <h3>5.2 Presentation Layer (Frontend)</h3>
+                <ul>
+                    <li><strong>Framework:</strong> <code>React.js</code>. A modern, component-based JavaScript library will be used to build a dynamic, responsive, and intuitive user interface.</li>
+                    <li><strong>State Management:</strong> A global state management library (e.g., Redux Toolkit or Zustand) will be used to manage application-wide state, such as user authentication status and profile data.</li>
+                    <li><strong>Communication:</strong> The frontend will communicate with the backend exclusively through a secure <code>REST API</code>, sending and receiving data in JSON format. All API requests will be authenticated using JSON Web Tokens (JWT).</li>
+                </ul>
+
+                <h3>5.3 Application Layer (Backend)</h3>
+                 <ul>
+                    <li><strong>Framework:</strong> <code>Node.js</code> with the <code>Express.js</code> framework. This provides a lightweight, efficient, and scalable foundation for building the REST API.</li>
+                    <li><strong>Responsibilities:</strong>
+                        <ul>
+                            <li><strong>User Authentication & Authorization:</strong> Manages user registration, login, and session control using JWTs. Implements role-based access control (RBAC) to restrict features to specific user types (Entrepreneur, Investor, Admin).</li>
+                            <li><strong>Business Logic:</strong> Handles all functional requirements, including pitch management, investor verification logic, connection requests, and meeting scheduling.</li>
+                            <li><strong>API Endpoints:</strong> Exposes a well-defined set of RESTful endpoints for all frontend operations.</li>
+                            <li><strong>External Service Integration:</strong> Manages connections to third-party services like AWS S3 for file storage and an email service for notifications.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>5.4 Data Layer</h3>
+                <ul>
+                    <li><strong>Relational Database:</strong> <code>MySQL</code>. A robust, open-source relational database will be used to store structured data like user profiles, pitch metadata, connections, and meeting information. Its support for JSON data types also provides flexibility.</li>
+                    <li><strong>Object Storage:</strong> <code>Amazon S3</code> (Simple Storage Service). All large, unstructured files, including entrepreneur video pitches and investor verification documents, will be stored securely in an S3 bucket. The backend will manage secure, pre-signed URLs for uploads and downloads to ensure data privacy.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 6. Appendices -->
+        <section id="appendices" class="content-section">
+            <h2><i class="material-icons">attachment</i>Appendices: Diagrams</h2>
+            <div class="card">
+                <p>This section contains all the relevant system design diagrams.</p>
+
+                <h3>6.1 Use Case Diagram</h3>
+                <div class="diagram-container">
+                    <a href="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/use%20case%20.png" target="_blank">
+                        <img src="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/use%20case%20.png" alt="Use Case Diagram">
+                    </a>
+                    <a href="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/use%20case%20.png" target="_blank">View Full Size</a>
+                </div>
+
+                <h3>6.2 Class Diagram</h3>
+                <div class="diagram-container">
+                     <a href="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/class%20diagram.png" target="_blank">
+                        <img src="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/class%20diagram.png" alt="Class Diagram">
+                    </a>
+                    <a href="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/class%20diagram.png" target="_blank">View Full Size</a>
+                </div>
+
+                <h3>6.3 Activity Diagram</h3>
+                 <div class="diagram-container">
+                    <a href="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/activityDiagram.png" target="_blank">
+                        <img src="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/activityDiagram.png" alt="Activity Diagram">
+                    </a>
+                    <a href="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/activityDiagram.png" target="_blank">View Full Size</a>
+                </div>
+
+                <h3>6.4 Component Diagram</h3>
+                 <div class="diagram-container">
+                    <a href="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/Component%20diagram.png" target="_blank">
+                        <img src="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/Component%20diagram.png" alt="Component Diagram">
+                    </a>
+                    <a href="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/Component%20diagram.png" target="_blank">View Full Size</a>
+                </div>
+
+                <h3>6.5 ER Diagram</h3>
+                 <div class="diagram-container">
+                    <a href="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/ER.png" target="_blank">
+                        <img src="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/ER.png" alt="ER Diagram">
+                    </a>
+                    <a href="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/ER.png" target="_blank">View Full Size</a>
+                </div>
+
+                <h3>6.6 DFD Level 0</h3>
+                 <div class="diagram-container">
+                    <a href="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/DFD_0.png" target="_blank">
+                        <img src="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/DFD_0.png" alt="DFD Level 0">
+                    </a>
+                    <a href="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/DFD_0.png" target="_blank">View Full Size</a>
+                </div>
+
+                <h3>6.7 DFD Level 1 (Investor Verification)</h3>
+                 <div class="diagram-container">
+                    <a href="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/DFD_1%20Investor%20verification.png" target="_blank">
+                        <img src="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/DFD_1%20Investor%20verification.png" alt="DFD Level 1 Investor Verification">
+                    </a>
+                    <a href="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/DFD_1%20Investor%20verification.png" target="_blank">View Full Size</a>
+                </div>
+                
+                <h3>6.8 DFD Level 1 (Pitch Discovery)</h3>
+                 <div class="diagram-container">
+                    <a href="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/DFD%20Level%201%20Pitch%20Discovery%20and%20Connection%20Process.png" target="_blank">
+                        <img src="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/DFD%20Level%201%20Pitch%20Discovery%20and%20Connection%20Process.png" alt="DFD Level 1 Pitch Discovery">
+                    </a>
+                    <a href="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/DFD%20Level%201%20Pitch%20Discovery%20and%20Connection%20Process.png" target="_blank">View Full Size</a>
+                </div>
+                
+                <h3>6.9 DFD Level 2 (Pitch Discovery Process)</h3>
+                 <div class="diagram-container">
+                    <a href="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/DFD%20Level%202%20(for%20Pitch%20Discovery%20Process).png" target="_blank">
+                        <img src="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/DFD%20Level%202%20(for%20Pitch%20Discovery%20Process).png" alt="DFD Level 2">
+                    </a>
+                    <a href="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/DFD%20Level%202%20(for%20Pitch%20Discovery%20Process).png" target="_blank">View Full Size</a>
+                </div>
+
+                <h3>6.10 Microservice Architecture Diagram</h3>
+                 <div class="diagram-container">
+                    <a href="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/Microservice%20Architecture%20Diagram.png" target="_blank">
+                        <img src="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/Microservice%20Architecture%20Diagram.png" alt="Microservice Architecture Diagram">
+                    </a>
+                    <a href="https://raw.githubusercontent.com/Chintusa/YouthConnect/2bc4727f6c553d9b019cfdb88b130525b277de3c/UML%20Diagrams/Microservice%20Architecture%20Diagram.png" target="_blank">View Full Size</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JavaScript for Mobile Navigation and Scrollspy -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.getElementById('sidebar');
+            const menuToggle = document.getElementById('menu-toggle');
+            const overlay = document.getElementById('overlay');
+            const navLinks = document.querySelectorAll('.sidebar-nav .nav-link');
+
+            // Function to toggle sidebar
+            const toggleSidebar = () => {
+                sidebar.classList.toggle('is-open');
+                overlay.classList.toggle('is-visible');
+            };
+
+            // Event listener for menu button
+            menuToggle.addEventListener('click', toggleSidebar);
+
+            // Event listener for overlay
+            overlay.addEventListener('click', toggleSidebar);
+            
+            // Close sidebar when a nav link is clicked (on mobile)
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (sidebar.classList.contains('is-open')) {
+                        toggleSidebar();
+                    }
+                });
+            });
+
+            // Scrollspy for active link highlighting
+            const sections = document.querySelectorAll('.content-section');
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        document.querySelectorAll('.nav-link').forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: '-20% 0px -80% 0px' });
+
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+        });
+    </script>
+
+</body>
+</html>
