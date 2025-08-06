@@ -4,6 +4,7 @@ import { Box, Typography, TextField, Button, InputAdornment, IconButton, Card, A
 import { Visibility, VisibilityOff, CheckCircle, ErrorOutline } from '@mui/icons-material';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
+import authApi from '../../services/authApi';
 
 const passwordChecks = [
   { label: 'At least 8 characters', test: v => v.length >= 8 },

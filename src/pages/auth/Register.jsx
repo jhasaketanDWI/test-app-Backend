@@ -1,9 +1,11 @@
+// src/pages/auth/Register.jsx
 import React, { useState, useRef, useEffect } from 'react';
 import BackgroundAnimation from '../../theme/BackgroundAnimation';
 import { Box, Typography, TextField, Button, InputAdornment, IconButton, Card, Alert, Collapse } from '@mui/material';
-import { Visibility, VisibilityOff, CheckCircle, ErrorOutline } from '@mui/icons-material';
+import { Visibility, VisibilityOff, CheckCircle, ErrorOutline, Person, Phone, Email } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
+import authApi from '../../services/authApi';
 
 const passwordChecks = [
   { label: 'At least 8 characters', test: v => v.length >= 8 },
@@ -40,7 +42,7 @@ function PasswordField({ placeholder, value, onChange, show, setShow, endAdornme
       variant="outlined"
       InputProps={{
         endAdornment: (
-          <InputAdornment position="end" sx={{ mr: 1 }}>
+          <InputAdornment position="end">
             <IconButton onClick={() => setShow(p => !p)} size="small" sx={{ color: '#666', '&:hover': { color: '#333', backgroundColor: 'rgba(0,0,0,0.05)' } }}>
               {show ? <VisibilityOff fontSize="small" /> : <Visibility fontSize="small" />}
             </IconButton>
@@ -142,55 +144,92 @@ const Register = () => {
     }
   }, []);
 
-  const handleSendEmailOtp = () => {
+  const handleSendEmailOtp = async () => {
     const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     if (!emailValid) {
       setOtpError('Enter a valid email');
-      setEmailOtpSent(false);
-      setOtpSuccess('');
       return;
     }
-    setEmailOtpSent(true);
-    setOtpError('');
-    setOtpSuccess('OTP sent successfully to your email!');
-    setTimeout(() => setEmailOtp(''), 1000);
-  };
 
-  const handleVerifyEmailOtp = () => {
-    if (emailOtp === '123456') {
-      setEmailVerified(true);
-      setOtpError('');
-      setOtpSuccess(''); // Remove success message when verified
-    } else {
-      setOtpError('Invalid email OTP');
-      setOtpSuccess('');
+    setLoading(true);
+    setOtpError('');
+    setOtpSuccess('');
+
+    try {
+      const response = await authApi.sendOtp({ email, role: role.toUpperCase() });
+      if (response.status) {
+        setEmailOtpSent(true);
+        setOtpSuccess(response.message);
+      } else {
+        setOtpError(response.message || 'Failed to send OTP. Please try again.');
+      }
+    } catch (error) {
+      setOtpError(error.response?.data?.message || 'An error occurred. Please try again.');
+    } finally {
+      setLoading(false);
     }
   };
 
-  const handleRegister = e => {
+  const handleVerifyEmailOtp = async () => {
+    setLoading(true);
+    setOtpError('');
+    setOtpSuccess('');
+
+    try {
+      const response = await authApi.validateOtp({ email, otp: emailOtp, role: role.toUpperCase() });
+      if (response.status) {
+        setEmailVerified(true);
+        setOtpSuccess(response.message);
+      } else {
+        setOtpError(response.message || 'Invalid OTP');
+      }
+    } catch (error) {
+      setOtpError(error.response?.data?.message || 'An error occurred during verification.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
+  const handleRegister = async (e) => {
     e.preventDefault();
     setRegisterError('');
     setRegisterSuccess('');
+
     if (!allValid || !passwordsMatch) {
       setShowPasswordChecks(true);
+      setRegisterError('Please fix the errors above.');
       return;
     }
+
+    if (!emailVerified) {
+      setRegisterError('Please verify your email before registering.');
+      return;
+    }
+
     setShowPasswordChecks(false);
     setLoading(true);
-    // Save user info to localStorage for demo/mock auth
-    setTimeout(() => {
+
+    try {
+      const userData = {
+        role: role.toUpperCase(),
+        name,
+        email,
+        phone,
+        password
+      };
+      const response = await authApi.registerUser(userData);
+      if (response.status) {
+        setRegisterSuccess(response.message);
+        setTimeout(() => navigate('/login'), 1500);
+      } else {
+        setRegisterError(response.message || 'Registration failed. Please try again.');
+      }
+    } catch (error) {
+      setRegisterError(error.response?.data?.message || 'An unexpected error occurred.');
+    } finally {
       setLoading(false);
-      // Save by email and phone (if both provided)
-      const userData = { role, name, phone, email, password };
-      if (email) {
-        localStorage.setItem(`user_${email.toLowerCase()}`, JSON.stringify(userData));
-      }
-      if (phone) {
-        localStorage.setItem(`user_${phone}`, JSON.stringify(userData));
-      }
-      setRegisterSuccess('Registration successful!');
-      setTimeout(() => navigate('/login'), 1200);
-    }, 1200);
+    }
   };
 
   const passwordStatus = passwordChecks.map(rule => rule.test(password));
@@ -227,7 +266,15 @@ const Register = () => {
               <Button variant={role === 'investor' ? 'contained' : 'outlined'} size="small" sx={{ fontWeight: 600, borderRadius: 2, bgcolor: role === 'investor' ? '#a259ff' : '#fff', color: role === 'investor' ? '#fff' : '#a259ff', borderColor: '#a259ff', '&:hover': { bgcolor: '#a259ff', color: '#fff', borderColor: '#a259ff' } }} onClick={e => { e.preventDefault(); setRole('investor'); }}>Investor</Button>
               <Button variant={role === 'entrepreneur' ? 'contained' : 'outlined'} size="small" sx={{ fontWeight: 600, borderRadius: 2, bgcolor: role === 'entrepreneur' ? '#a259ff' : '#fff', color: role === 'entrepreneur' ? '#fff' : '#a259ff', borderColor: '#a259ff', '&:hover': { bgcolor: '#a259ff', color: '#fff', borderColor: '#a259ff' } }} onClick={e => { e.preventDefault(); setRole('entrepreneur'); }}>Entrepreneur</Button>
             </Box>
-            <TextField placeholder="Full Name" type="text" fullWidth required value={name} onChange={e => setName(e.target.value)} variant="outlined" sx={{ mb: 1, background: 'transparent', borderRadius: 2, input: { color: '#333', fontSize: 14, py: 0.8 }, minHeight: 36, fontSize: 14, transition: 'all 0.3s ease', zIndex: 2, position: 'relative', '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: '#4a90e2' }, '&:hover fieldset': { borderColor: '#4a90e2' }, '&.Mui-focused fieldset': { borderColor: '#4a90e2' } } }} InputLabelProps={{ shrink: false }} />
+            <TextField placeholder="Full Name" type="text" fullWidth required value={name} onChange={e => setName(e.target.value)} variant="outlined" sx={{ mb: 1, background: 'transparent', borderRadius: 2, input: { color: '#333', fontSize: 14, py: 0.8 }, minHeight: 36, fontSize: 14, transition: 'all 0.3s ease', zIndex: 2, position: 'relative', '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: '#4a90e2' }, '&:hover fieldset': { borderColor: '#4a90e2' }, '&.Mui-focused fieldset': { borderColor: '#4a90e2' } } }} InputLabelProps={{ shrink: false }} 
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <Person sx={{ color: '#333' }} />
+                  </InputAdornment>
+                )
+              }}
+            />
             <TextField 
               placeholder="Phone" 
               type="tel" 
@@ -238,6 +285,13 @@ const Register = () => {
               variant="outlined" 
               sx={{ mb: 1, background: 'transparent', borderRadius: 2, input: { color: '#333', fontSize: 14, py: 0.8 }, minHeight: 36, fontSize: 14, transition: 'all 0.3s ease', zIndex: 2, position: 'relative', '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: '#4a90e2' }, '&:hover fieldset': { borderColor: '#4a90e2' }, '&.Mui-focused fieldset': { borderColor: '#4a90e2' } } }} 
               InputLabelProps={{ shrink: false }}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <Phone sx={{ color: '#333' }} />
+                  </InputAdornment>
+                )
+              }}
             />
             <TextField 
               placeholder="Email" 
@@ -251,26 +305,22 @@ const Register = () => {
               InputLabelProps={{ shrink: false }}
               InputProps={{
                 endAdornment: (
-                  <InputAdornment position="end" sx={{ mr: 1 }}>
-                    {emailVerified ? (
-                      <CheckCircle fontSize="small" sx={{ color: 'green' }} />
-                    ) : (
-                      <ErrorOutline fontSize="small" sx={{ color: '#b71c1c' }} />
-                    )}
+                  <InputAdornment position="end">
+                    <Email sx={{ color: '#333' }} />
                   </InputAdornment>
                 )
               }}
             />
             {!emailVerified && (
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
-                <Button variant="outlined" size="small" sx={{ color: '#a259ff', borderColor: '#a259ff', fontWeight: 600, borderRadius: 2, '&:hover': { bgcolor: '#a259ff', color: '#fff', borderColor: '#a259ff' } }} onClick={handleSendEmailOtp} disabled={emailOtpSent || !email}>
-                  {emailOtpSent ? 'OTP Sent' : 'Send OTP'}
+                <Button variant="outlined" size="small" sx={{ color: '#a259ff', borderColor: '#a259ff', fontWeight: 600, borderRadius: 2, '&:hover': { bgcolor: '#a259ff', color: '#fff', borderColor: '#a259ff' } }} onClick={handleSendEmailOtp} disabled={loading || !email}>
+                  {loading ? 'Sending...' : (emailOtpSent ? 'Resend OTP' : 'Send OTP')}
                 </Button>
                 {emailOtpSent && (
                   <>
                     <TextField placeholder="Enter OTP" type="text" value={emailOtp} onChange={e => setEmailOtp(e.target.value)} variant="outlined" sx={{ background: 'transparent', borderRadius: 2, input: { color: '#333', fontSize: 14, py: 0.8 }, minHeight: 36, fontSize: 14, width: 120, transition: 'all 0.3s ease', zIndex: 2, position: 'relative', '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: '#4a90e2' }, '&:hover fieldset': { borderColor: '#4a90e2' }, '&.Mui-focused fieldset': { borderColor: '#4a90e2' } } }} InputLabelProps={{ shrink: false }} />
-                    <Button variant="contained" size="small" sx={{ bgcolor: '#a259ff', color: '#fff', fontWeight: 700, borderRadius: 2, px: 2, '&:hover': { bgcolor: '#fff', color: '#a259ff' } }} onClick={handleVerifyEmailOtp}>
-                      Verify
+                    <Button variant="contained" size="small" sx={{ bgcolor: '#a259ff', color: '#fff', fontWeight: 700, borderRadius: 2, px: 2, '&:hover': { bgcolor: '#fff', color: '#a259ff' } }} onClick={handleVerifyEmailOtp} disabled={loading}>
+                      {loading ? 'Verifying...' : 'Verify'}
                     </Button>
                   </>
                 )}

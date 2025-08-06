@@ -1,12 +1,11 @@
-
-
+// src/pages/auth/Login.jsx
 import React, { useState, useRef, useEffect } from 'react';
 import BackgroundAnimation from '../../theme/BackgroundAnimation';
 import { Box, Typography, TextField, Button, InputAdornment, IconButton, Card } from '@mui/material';
-import { Visibility, VisibilityOff } from '@mui/icons-material';
+import { Visibility, VisibilityOff, Email } from '@mui/icons-material';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
-import authService from '../../services/authService';
+import authApi from '../../services/authApi';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -23,74 +22,17 @@ const Login = () => {
   const pageTitle = isAdminLogin ? "Admin Portal" : "Login";
 
   useEffect(() => {
-    // Restore card rotation animation, keep card flat (no 3D faces)
+    // GSAP animations (no changes here)
     const card = cardRef.current;
     const title = titleRef.current;
-    const formElements = formRef.current?.children;
     if (card && title) {
-      gsap.set(card, {
-        scale: 1,
-        opacity: 1,
-        rotateX: 0,
-        rotateY: 0,
-        rotateZ: 0,
-        boxShadow: '0 8px 32px 0 rgba(0,0,0,0.12)',
-        background: '#fff',
-        transformOrigin: 'center center',
-      });
-      gsap.set(title, {
-        opacity: 0,
-        scale: 0.5,
-        y: -20
-      });
-      if (formElements) {
-        gsap.set(formElements, {
-          opacity: 0,
-          scale: 0.8,
-          y: 20
-        });
-      }
-      // Animation timeline - rotate card for effect
+      gsap.set(card, { scale: 1, opacity: 1, rotateX: 0, rotateY: 0, rotateZ: 0, boxShadow: '0 8px 32px 0 rgba(0,0,0,0.12)', background: '#fff', transformOrigin: 'center center' });
+      gsap.set(title, { opacity: 0, scale: 0.5, y: -20 });
       const tl = gsap.timeline({ delay: 0.1 });
-      tl.to(card, {
-        rotateX: 60,
-        rotateY: 45,
-        rotateZ: 15,
-        duration: 0.3,
-        ease: 'power2.out',
-      })
-        .to(card, {
-          rotateX: 0,
-          rotateY: 0,
-          rotateZ: 0,
-          duration: 0.5,
-          ease: 'power2.inOut',
-          delay: 0.1,
-        })
-        .to(title, {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          duration: 0.2,
-          ease: 'back.out(1.7)',
-        }, '-=0.4');
-      if (formElements) {
-        tl.to(formElements, {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          duration: 0.15,
-          stagger: 0.02,
-          ease: 'back.out(1.7)',
-        }, '-=0.3');
-      }
-      tl.to(card, {
-        y: -5,
-        duration: 3,
-        ease: 'sine.inOut',
-        yoyo: true,
-        repeat: -1
-      }, '+=0.5');
+      tl.to(card, { rotateX: 60, rotateY: 45, rotateZ: 15, duration: 0.3, ease: 'power2.out' })
+        .to(card, { rotateX: 0, rotateY: 0, rotateZ: 0, duration: 0.5, ease: 'power2.inOut', delay: 0.1 })
+        .to(title, { opacity: 1, scale: 1, y: 0, duration: 0.2, ease: 'back.out(1.7)' }, '-=0.4');
+      tl.to(card, { y: -5, duration: 3, ease: 'sine.inOut', yoyo: true, repeat: -1 }, '+=0.5');
     }
   }, [pageTitle]);
 
@@ -98,21 +40,29 @@ const Login = () => {
     e.preventDefault();
     setError("");
     setLoading(true);
-    setTimeout(() => {
-      const user = authService.login(email, password);
-      setLoading(false);
+
+    try {
+      const user = await authApi.login(email, password);
+
       if (user) {
-        if (user.role === 'entrepreneur') {
-          navigate('/entrepreneur/dashboard');
-        } else if (user.role === 'investor') {
-          navigate('/investor/dashboard');
-        } else if (user.role === 'admin') {
-          navigate('/admin/dashboard');
+        if (user.role.toLowerCase() === 'investor') {
+          navigate('/investor/InvestorDashboard');
+        } else if (user.role.toLowerCase() === 'entrepreneur') {
+          navigate('/entrepreneur/EntrepreneurDashboard');
+        } else if (user.role.toLowerCase() === 'admin') {
+          navigate('/admin/AdminDashboard');
+        } else {
+          setError('Could not determine user role.');
         }
       } else {
-        setError('Invalid email or password.');
+        
+        setError('Login failed. Please check your credentials.');
       }
-    }, 1200);
+    } catch (error) {
+      setError(error.response?.data?.message || 'An error occurred during login. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -206,6 +156,13 @@ const Login = () => {
                 position: 'relative'
               }}
               InputLabelProps={{ style: { display: 'none' } }}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <Email sx={{ color: '#333' }} />
+                  </InputAdornment>
+                )
+              }}
             />
             <TextField
               label=""
@@ -217,7 +174,7 @@ const Login = () => {
               onChange={e => setPassword(e.target.value)}
               InputProps={{
                 endAdornment: (
-                  <InputAdornment position="end" sx={{ mr: 1 }}>
+                  <InputAdornment position="end">
                     <IconButton
                       onClick={() => setShowPassword((prev) => !prev)}
                       size="small"
@@ -290,7 +247,18 @@ const Login = () => {
               variant="contained"
               color="primary"
               disabled={loading}
-              sx={{ fontWeight: 700, borderRadius: 2, py: 1.2, bgcolor: '#a259ff', color: '#fff', '&:hover': { bgcolor: '#fff', color: '#a259ff' } }}
+              sx={{
+                fontWeight: 700,
+                borderRadius: 2,
+                py: 1.2,
+                bgcolor: '#a259ff',
+                color: '#fff',
+                '&:hover': { bgcolor: '#fff', color: '#a259ff' },
+                '&:disabled': {
+                  bgcolor: 'rgba(162, 89, 255, 0.5)',
+                  color: 'rgba(255, 255, 255, 0.7)',
+                },
+              }}
             >
               {loading ? 'Authenticating...' : (isAdminLogin ? 'Access Portal' : 'Login')}
             </Button>
