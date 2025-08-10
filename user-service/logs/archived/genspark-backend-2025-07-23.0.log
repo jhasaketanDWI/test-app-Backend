@@ -1,0 +1,1174 @@
+2025-07-23T10:11:13.413+05:30  INFO 4368 --- [user-service] [restartedMain] in.org.genSpark.UserServiceApplication   : Starting UserServiceApplication using Java 21.0.3 with PID 4368 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23T10:11:13.414+05:30  INFO 4368 --- [user-service] [restartedMain] in.org.genSpark.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-23T10:11:13.894+05:30  INFO 4368 --- [user-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-23T10:11:13.895+05:30  INFO 4368 --- [user-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23T10:11:13.916+05:30  INFO 4368 --- [user-service] [restartedMain] o.a.c.c.C.[.[.[/genSprak/api/v1]         : Initializing Spring embedded WebApplicationContext
+2025-07-23T10:11:13.962+05:30  INFO 4368 --- [user-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-07-23T10:11:13.978+05:30  INFO 4368 --- [user-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@453a3906
+2025-07-23T10:11:13.979+05:30  INFO 4368 --- [user-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-07-23T10:11:13.985+05:30  INFO 4368 --- [user-service] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23T10:11:14.010+05:30  INFO 4368 --- [user-service] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.011s)
+2025-07-23T10:11:14.023+05:30  INFO 4368 --- [user-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `genspark_db`: 1
+2025-07-23T10:11:14.025+05:30  INFO 4368 --- [user-service] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23T10:11:14.062+05:30  WARN 4368 --- [user-service] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23T10:11:14.383+05:30  WARN 4368 --- [user-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23T10:11:14.592+05:30  INFO 4368 --- [user-service] [restartedMain] in.org.genSpark.UserServiceApplication   : Started UserServiceApplication in 1.236 seconds (process running for 31.383)
+2025-07-23T10:12:26.041+05:30  INFO 4368 --- [user-service] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-07-23T10:12:26.046+05:30  INFO 4368 --- [user-service] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-07-23 10:12:58,523 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@2bdf8453 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:353)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at in.org.genSpark.UserServiceApplication.main(UserServiceApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@2bdf8453 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:289)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:267)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:81)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:61)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:195)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 22 common frames omitted
+	Suppressed: java.lang.NumberFormatException: For input string: "1."
+		at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+		at java.base/java.lang.Integer.parseInt(Integer.java:662)
+		at java.base/java.lang.Integer.parseInt(Integer.java:778)
+		at ch.qos.logback.classic.pattern.NamedConverter.start(NamedConverter.java:92)
+		at ch.qos.logback.core.pattern.ConverterUtil.startConverters(ConverterUtil.java:37)
+		at ch.qos.logback.core.pattern.PatternLayoutBase.start(PatternLayoutBase.java:148)
+		at ch.qos.logback.classic.encoder.PatternLayoutEncoder.start(PatternLayoutEncoder.java:28)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.postHandleComplex(ImplicitModelHandler.java:207)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.postHandle(ImplicitModelHandler.java:186)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:257)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.traversalLoop(DefaultProcessor.java:90)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.process(DefaultProcessor.java:106)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.processModel(GenericXMLConfigurator.java:222)
+		at org.springframework.boot.logging.logback.SpringBootJoranConfigurator.processModel(SpringBootJoranConfigurator.java:136)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:178)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:123)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:66)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.configureByResourceUrl(LogbackLoggingSystem.java:298)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.lambda$loadConfiguration$2(LogbackLoggingSystem.java:260)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.withLoggingSuppressed(LogbackLoggingSystem.java:481)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:252)
+		... 26 common frames omitted
+2025-07-23 10:13:14,399 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@7e714e19 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:353)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at in.org.genSpark.UserServiceApplication.main(UserServiceApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@7e714e19 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:289)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:267)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:81)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:61)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:195)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 22 common frames omitted
+	Suppressed: java.lang.NumberFormatException: For input string: "1."
+		at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+		at java.base/java.lang.Integer.parseInt(Integer.java:662)
+		at java.base/java.lang.Integer.parseInt(Integer.java:778)
+		at ch.qos.logback.classic.pattern.NamedConverter.start(NamedConverter.java:92)
+		at ch.qos.logback.core.pattern.ConverterUtil.startConverters(ConverterUtil.java:37)
+		at ch.qos.logback.core.pattern.PatternLayoutBase.start(PatternLayoutBase.java:148)
+		at ch.qos.logback.classic.encoder.PatternLayoutEncoder.start(PatternLayoutEncoder.java:28)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.postHandleComplex(ImplicitModelHandler.java:207)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.postHandle(ImplicitModelHandler.java:186)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:257)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.traversalLoop(DefaultProcessor.java:90)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.process(DefaultProcessor.java:106)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.processModel(GenericXMLConfigurator.java:222)
+		at org.springframework.boot.logging.logback.SpringBootJoranConfigurator.processModel(SpringBootJoranConfigurator.java:136)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:178)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:123)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:66)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.configureByResourceUrl(LogbackLoggingSystem.java:298)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.lambda$loadConfiguration$2(LogbackLoggingSystem.java:260)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.withLoggingSuppressed(LogbackLoggingSystem.java:481)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:252)
+		... 26 common frames omitted
+2025-07-23 10:14:30,047 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 4368 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:14:30,047 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:14:30,515 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:14:30,516 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:14:30,541 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:14:30,590 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-3 - Starting...
+2025-07-23 10:14:30,611 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@76fdb35e
+2025-07-23 10:14:30,611 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-3 - Start completed.
+2025-07-23 10:14:30,617 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 10:14:30,642 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.010s)
+2025-07-23 10:14:30,656 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 10:14:30,657 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 10:14:30,694 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 10:14:31,038 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23 10:14:31,228 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 1.212 seconds (process running for 228.018)
+2025-07-23 10:14:50,143 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 8104 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:14:50,146 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:14:52,296 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:14:52,300 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:14:52,301 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:14:52,365 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:14:52,703 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2025-07-23 10:14:53,152 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7d3286f1
+2025-07-23 10:14:53,155 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2025-07-23 10:14:53,233 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 10:14:53,319 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.051s)
+2025-07-23 10:14:53,342 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 10:14:53,348 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 10:14:53,984 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 10:14:55,738 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23 10:14:56,522 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:14:56,558 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 7.147 seconds (process running for 7.658)
+2025-07-23 10:15:11,983 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-23 10:15:12,043 ERROR o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [/genSprak/api/v1] threw exception
+io.jsonwebtoken.security.WeakKeyException: The verification key's size is 432 bits which is not secure enough for the HS512 algorithm.  The JWT JWA Specification (RFC 7518, Section 3.2) states that keys used with HS512 MUST have a size >= 512 bits (the key size must be greater than or equal to the hash output size).  Consider using the io.jsonwebtoken.security.Keys class's 'secretKeyFor(SignatureAlgorithm.HS512)' method to create a key guaranteed to be secure enough for HS512.  See https://tools.ietf.org/html/rfc7518#section-3.2 for more information.
+	at io.jsonwebtoken.SignatureAlgorithm.assertValid(SignatureAlgorithm.java:387)
+	at io.jsonwebtoken.SignatureAlgorithm.assertValidVerificationKey(SignatureAlgorithm.java:328)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:380)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:529)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:589)
+	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJws(ImmutableJwtParser.java:173)
+	at in.org.genSpark.config.JwtHelper.getAllClaimsFromToken(JwtHelper.java:52)
+	at in.org.genSpark.config.JwtHelper.getClaimFromToken(JwtHelper.java:47)
+	at in.org.genSpark.config.JwtHelper.getUsernameFromToken(JwtHelper.java:39)
+	at in.org.genSpark.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:45)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-07-23 10:15:51,422 INFO o.a.j.l.DirectJDKLog [tomcat-shutdown] Pausing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:15:51,431 INFO o.a.j.l.DirectJDKLog [Thread-5] Stopping ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:15:51,439 INFO c.z.h.HikariDataSource [Thread-5] HikariPool-1 - Shutdown initiated...
+2025-07-23 10:15:51,448 INFO c.z.h.HikariDataSource [Thread-5] HikariPool-1 - Shutdown completed.
+2025-07-23 10:15:51,542 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 8104 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:15:51,543 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:15:52,017 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:15:52,017 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:15:52,018 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:15:52,046 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:15:52,097 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-2 - Starting...
+2025-07-23 10:15:52,114 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@53c8cbf0
+2025-07-23 10:15:52,115 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-2 - Start completed.
+2025-07-23 10:15:52,121 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 10:15:52,146 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.011s)
+2025-07-23 10:15:52,162 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 10:15:52,163 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 10:15:52,199 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 10:15:52,549 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23 10:15:52,750 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:15:52,757 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 1.25 seconds (process running for 63.857)
+2025-07-23 10:15:57,108 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-3] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-23 10:15:57,116 ERROR o.a.j.l.DirectJDKLog [http-nio-8080-exec-3] Servlet.service() for servlet [dispatcherServlet] in context with path [/genSprak/api/v1] threw exception
+io.jsonwebtoken.security.SignatureException: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:399)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:529)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:589)
+	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJws(ImmutableJwtParser.java:173)
+	at in.org.genSpark.config.JwtHelper.getAllClaimsFromToken(JwtHelper.java:52)
+	at in.org.genSpark.config.JwtHelper.getClaimFromToken(JwtHelper.java:47)
+	at in.org.genSpark.config.JwtHelper.getUsernameFromToken(JwtHelper.java:39)
+	at in.org.genSpark.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:45)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-07-23 10:19:50,457 INFO o.a.j.l.DirectJDKLog [tomcat-shutdown] Pausing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:19:50,465 INFO o.a.j.l.DirectJDKLog [Thread-7] Stopping ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:19:50,468 INFO c.z.h.HikariDataSource [Thread-7] HikariPool-2 - Shutdown initiated...
+2025-07-23 10:19:50,473 INFO c.z.h.HikariDataSource [Thread-7] HikariPool-2 - Shutdown completed.
+2025-07-23 10:19:50,561 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 8104 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:19:50,561 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:19:50,928 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:19:50,929 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:19:50,929 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:19:50,949 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:19:50,957 ERROR o.s.b.w.e.t.TomcatStarter [restartedMain] Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthenticationFilter': Unsatisfied dependency expressed through field 'jwtHelper': Error creating bean with name 'jwtHelper' defined in file [C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes\in\org\genSpark\config\JwtHelper.class]: Failed to instantiate [in.org.genSpark.config.JwtHelper]: Constructor threw exception
+2025-07-23 10:19:50,958 INFO o.a.j.l.DirectJDKLog [restartedMain] Stopping service [Tomcat]
+2025-07-23 10:19:50,960 WARN o.s.c.s.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-07-23 10:19:50,991 ERROR o.s.b.SpringApplication [restartedMain] Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:170)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at in.org.genSpark.UserServiceApplication.main(UserServiceApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:147)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:517)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:219)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:193)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167)
+	... 11 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthenticationFilter': Unsatisfied dependency expressed through field 'jwtHelper': Error creating bean with name 'jwtHelper' defined in file [C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes\in\org\genSpark\config\JwtHelper.class]: Failed to instantiate [in.org.genSpark.config.JwtHelper]: Constructor threw exception
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:230)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:184)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:179)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:164)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:96)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:271)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:245)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4464)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:412)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:438)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128)
+	... 16 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jwtHelper' defined in file [C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes\in\org\genSpark\config\JwtHelper.class]: Failed to instantiate [in.org.genSpark.config.JwtHelper]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1357)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1242)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1683)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 58 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [in.org.genSpark.config.JwtHelper]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:223)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:122)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1351)
+	... 68 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	Syntax error on token "package", import expected
+	The declared package "in.genspark.genspark_backend.config" does not match the expected package "in.org.genSpark.config"
+
+	at in.org.genSpark.config.JwtHelper.<init>(JwtHelper.java:3)
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:197)
+	... 70 common frames omitted
+2025-07-23 10:19:56,600 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 8104 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:19:56,601 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:19:57,008 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:19:57,009 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:19:57,009 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:19:57,034 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:19:57,069 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-3 - Starting...
+2025-07-23 10:19:57,085 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4996fe3
+2025-07-23 10:19:57,085 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-3 - Start completed.
+2025-07-23 10:19:57,091 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 10:19:57,112 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.009s)
+2025-07-23 10:19:57,129 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 10:19:57,130 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 10:19:57,160 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 10:19:57,475 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23 10:19:57,661 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:19:57,675 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 1.103 seconds (process running for 308.774)
+2025-07-23 10:20:20,677 INFO o.a.j.l.DirectJDKLog [tomcat-shutdown] Pausing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:20:20,686 INFO o.a.j.l.DirectJDKLog [Thread-11] Stopping ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:20:20,689 INFO c.z.h.HikariDataSource [Thread-11] HikariPool-3 - Shutdown initiated...
+2025-07-23 10:20:20,693 INFO c.z.h.HikariDataSource [Thread-11] HikariPool-3 - Shutdown completed.
+2025-07-23 10:20:20,781 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 8104 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:20:20,781 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:20:21,137 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:20:21,138 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:20:21,138 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:20:21,165 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:20:21,172 ERROR o.s.b.w.e.t.TomcatStarter [restartedMain] Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthenticationFilter': Unsatisfied dependency expressed through field 'jwtHelper': Error creating bean with name 'jwtHelper': Invocation of init method failed
+2025-07-23 10:20:21,173 INFO o.a.j.l.DirectJDKLog [restartedMain] Stopping service [Tomcat]
+2025-07-23 10:20:21,175 WARN o.s.c.s.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-07-23 10:20:21,180 ERROR o.s.b.SpringApplication [restartedMain] Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:170)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at in.org.genSpark.UserServiceApplication.main(UserServiceApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:147)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:517)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:219)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:193)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167)
+	... 11 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthenticationFilter': Unsatisfied dependency expressed through field 'jwtHelper': Error creating bean with name 'jwtHelper': Invocation of init method failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:230)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:184)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:179)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:164)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:96)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:271)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:245)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4464)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:412)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:438)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128)
+	... 16 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jwtHelper': Invocation of init method failed
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:429)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1818)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1683)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 58 common frames omitted
+Caused by: io.jsonwebtoken.io.DecodingException: Illegal base64 character: '-'
+	at io.jsonwebtoken.io.Base64.ctoi(Base64.java:221)
+	at io.jsonwebtoken.io.Base64.decodeFast(Base64.java:270)
+	at io.jsonwebtoken.io.Base64Decoder.decode(Base64Decoder.java:36)
+	at io.jsonwebtoken.io.Base64Decoder.decode(Base64Decoder.java:23)
+	at io.jsonwebtoken.io.ExceptionPropagatingDecoder.decode(ExceptionPropagatingDecoder.java:36)
+	at in.org.genSpark.config.JwtHelper.init(JwtHelper.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219)
+	... 69 common frames omitted
+2025-07-23 10:21:34,624 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 8104 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:21:34,625 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:21:34,916 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:21:34,917 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:21:34,918 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:21:34,934 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:21:34,965 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-4 - Starting...
+2025-07-23 10:21:34,979 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2407fe7d
+2025-07-23 10:21:34,980 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-4 - Start completed.
+2025-07-23 10:21:34,985 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 10:21:35,005 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.008s)
+2025-07-23 10:21:35,019 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 10:21:35,020 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 10:21:35,048 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 10:21:35,329 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23 10:21:35,493 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:21:35,505 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 0.903 seconds (process running for 406.605)
+2025-07-23 10:21:40,739 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-23 10:21:40,746 WARN i.o.g.c.JwtAuthenticationFilter [http-nio-8080-exec-2] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-07-23T04:51:40Z, a difference of 368410745 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-07-23 10:23:11,532 INFO o.a.j.l.DirectJDKLog [tomcat-shutdown] Pausing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:23:11,540 INFO o.a.j.l.DirectJDKLog [Thread-18] Stopping ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:23:11,542 INFO c.z.h.HikariDataSource [Thread-18] HikariPool-4 - Shutdown initiated...
+2025-07-23 10:23:11,547 INFO c.z.h.HikariDataSource [Thread-18] HikariPool-4 - Shutdown completed.
+2025-07-23 10:23:11,627 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 8104 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:23:11,628 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:23:11,927 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:23:11,928 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:23:11,928 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:23:11,943 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:23:11,981 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-5 - Starting...
+2025-07-23 10:23:12,000 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@359883f9
+2025-07-23 10:23:12,001 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-5 - Start completed.
+2025-07-23 10:23:12,004 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 10:23:12,021 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.008s)
+2025-07-23 10:23:12,034 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 10:23:12,035 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 10:23:12,062 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 10:23:12,303 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23 10:23:12,446 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:23:12,458 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 0.855 seconds (process running for 503.558)
+2025-07-23 10:23:16,351 INFO o.a.j.l.DirectJDKLog [tomcat-shutdown] Pausing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:23:16,358 INFO o.a.j.l.DirectJDKLog [Thread-25] Stopping ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:23:16,361 INFO c.z.h.HikariDataSource [Thread-25] HikariPool-5 - Shutdown initiated...
+2025-07-23 10:23:16,364 INFO c.z.h.HikariDataSource [Thread-25] HikariPool-5 - Shutdown completed.
+2025-07-23 10:23:16,445 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 8104 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:23:16,445 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:23:16,756 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:23:16,756 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:23:16,757 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:23:16,774 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:23:16,809 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-6 - Starting...
+2025-07-23 10:23:16,821 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2d906e05
+2025-07-23 10:23:16,822 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-6 - Start completed.
+2025-07-23 10:23:16,827 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 10:23:16,844 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.007s)
+2025-07-23 10:23:16,856 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 10:23:16,857 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 10:23:16,888 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 10:23:17,144 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23 10:23:17,283 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:23:17,290 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 0.868 seconds (process running for 508.389)
+2025-07-23 10:23:32,096 INFO o.a.j.l.DirectJDKLog [tomcat-shutdown] Pausing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:23:32,104 INFO o.a.j.l.DirectJDKLog [Thread-29] Stopping ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:23:32,107 INFO c.z.h.HikariDataSource [Thread-29] HikariPool-6 - Shutdown initiated...
+2025-07-23 10:23:32,111 INFO c.z.h.HikariDataSource [Thread-29] HikariPool-6 - Shutdown completed.
+2025-07-23 10:23:32,195 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 8104 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:23:32,196 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:23:32,477 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:23:32,478 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:23:32,478 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:23:32,501 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:23:32,530 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-7 - Starting...
+2025-07-23 10:23:32,546 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4f84866c
+2025-07-23 10:23:32,547 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-7 - Start completed.
+2025-07-23 10:23:32,551 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 10:23:32,567 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.007s)
+2025-07-23 10:23:32,580 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 10:23:32,582 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 10:23:32,613 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 10:23:32,883 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23 10:23:33,014 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:23:33,028 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 0.86 seconds (process running for 524.128)
+2025-07-23 10:23:37,441 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-23 10:23:37,446 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-2] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-07-23T04:53:37Z, a difference of 368527446 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-07-23 10:28:44,669 INFO o.a.j.l.DirectJDKLog [tomcat-shutdown] Pausing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:28:44,677 INFO o.a.j.l.DirectJDKLog [Thread-33] Stopping ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:28:44,680 INFO c.z.h.HikariDataSource [Thread-33] HikariPool-7 - Shutdown initiated...
+2025-07-23 10:28:44,684 INFO c.z.h.HikariDataSource [Thread-33] HikariPool-7 - Shutdown completed.
+2025-07-23 10:28:44,762 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 8104 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:28:44,762 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:28:45,060 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:28:45,060 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:28:45,061 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:28:45,080 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:28:45,110 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-8 - Starting...
+2025-07-23 10:28:45,124 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-8 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ccbb803
+2025-07-23 10:28:45,124 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-8 - Start completed.
+2025-07-23 10:28:45,129 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 10:28:45,146 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.007s)
+2025-07-23 10:28:45,156 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 10:28:45,157 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 10:28:45,182 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 10:28:45,439 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23 10:28:45,593 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:28:45,607 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 0.869 seconds (process running for 836.707)
+2025-07-23 10:29:03,503 INFO o.a.j.l.DirectJDKLog [tomcat-shutdown] Pausing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:29:03,507 INFO o.a.j.l.DirectJDKLog [Thread-37] Stopping ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:29:03,509 INFO c.z.h.HikariDataSource [Thread-37] HikariPool-8 - Shutdown initiated...
+2025-07-23 10:29:03,513 INFO c.z.h.HikariDataSource [Thread-37] HikariPool-8 - Shutdown completed.
+2025-07-23 10:29:03,602 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 8104 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:29:03,603 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:29:03,904 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:29:03,905 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:29:03,905 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:29:03,922 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:29:03,953 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-9 - Starting...
+2025-07-23 10:29:03,967 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-9 - Added connection com.mysql.cj.jdbc.ConnectionImpl@52d175e3
+2025-07-23 10:29:03,968 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-9 - Start completed.
+2025-07-23 10:29:03,972 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 10:29:03,990 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.008s)
+2025-07-23 10:29:04,002 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 10:29:04,004 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 10:29:04,028 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 10:29:04,290 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23 10:29:04,432 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:29:04,437 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 0.86 seconds (process running for 855.537)
+2025-07-23 10:29:23,830 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-3] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-23 10:29:23,835 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-3] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-07-23T04:59:23Z, a difference of 368873835 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-07-23 10:29:24,028 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-3] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<in.org.genSpark.dto.ApiResponse<?>> in.org.genSpark.controller.UserController.registerUser(in.org.genSpark.dto.RegisterUserDto): [Field error in object 'registerUserDto' on field 'role': rejected value [null]; codes [NotNull.registerUserDto.role,NotNull.role,NotNull.in.org.genSpark.enums.Role,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registerUserDto.role,role]; arguments []; default message [role]]; default message [A role (STARTUP, INVESTOR) must be specified]] ]
+2025-07-23 10:29:33,043 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-4] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-07-23T04:59:33Z, a difference of 368883043 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-07-23 10:29:33,048 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-4] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<in.org.genSpark.dto.ApiResponse<?>> in.org.genSpark.controller.UserController.registerUser(in.org.genSpark.dto.RegisterUserDto): [Field error in object 'registerUserDto' on field 'role': rejected value [null]; codes [NotNull.registerUserDto.role,NotNull.role,NotNull.in.org.genSpark.enums.Role,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registerUserDto.role,role]; arguments []; default message [role]]; default message [A role (STARTUP, INVESTOR) must be specified]] ]
+2025-07-23 10:29:37,078 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-5] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-07-23T04:59:37Z, a difference of 368887078 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-07-23 10:29:37,081 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-5] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<in.org.genSpark.dto.ApiResponse<?>> in.org.genSpark.controller.UserController.registerUser(in.org.genSpark.dto.RegisterUserDto): [Field error in object 'registerUserDto' on field 'role': rejected value [null]; codes [NotNull.registerUserDto.role,NotNull.role,NotNull.in.org.genSpark.enums.Role,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registerUserDto.role,role]; arguments []; default message [role]]; default message [A role (STARTUP, INVESTOR) must be specified]] ]
+2025-07-23 10:29:50,253 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-8] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-07-23T04:59:50Z, a difference of 368900253 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-07-23 10:29:50,257 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-8] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<in.org.genSpark.dto.ApiResponse<?>> in.org.genSpark.controller.UserController.registerUser(in.org.genSpark.dto.RegisterUserDto): [Field error in object 'registerUserDto' on field 'role': rejected value [null]; codes [NotNull.registerUserDto.role,NotNull.role,NotNull.in.org.genSpark.enums.Role,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registerUserDto.role,role]; arguments []; default message [role]]; default message [A role (STARTUP, INVESTOR) must be specified]] ]
+2025-07-23 10:29:56,835 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-10] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-07-23T04:59:56Z, a difference of 368906835 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-07-23 10:29:56,839 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-10] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<in.org.genSpark.dto.ApiResponse<?>> in.org.genSpark.controller.UserController.registerUser(in.org.genSpark.dto.RegisterUserDto): [Field error in object 'registerUserDto' on field 'role': rejected value [null]; codes [NotNull.registerUserDto.role,NotNull.role,NotNull.in.org.genSpark.enums.Role,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registerUserDto.role,role]; arguments []; default message [role]]; default message [A role (STARTUP, INVESTOR) must be specified]] ]
+2025-07-23 10:30:15,806 INFO o.a.j.l.DirectJDKLog [tomcat-shutdown] Pausing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:30:15,814 INFO o.a.j.l.DirectJDKLog [Thread-41] Stopping ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:30:15,816 INFO c.z.h.HikariDataSource [Thread-41] HikariPool-9 - Shutdown initiated...
+2025-07-23 10:30:15,819 INFO c.z.h.HikariDataSource [Thread-41] HikariPool-9 - Shutdown completed.
+2025-07-23 10:30:15,903 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 8104 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:30:15,903 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:30:16,194 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:30:16,194 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:30:16,195 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:30:16,210 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:30:16,238 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-10 - Starting...
+2025-07-23 10:30:16,253 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-10 - Added connection com.mysql.cj.jdbc.ConnectionImpl@12a71bf7
+2025-07-23 10:30:16,253 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-10 - Start completed.
+2025-07-23 10:30:16,256 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 10:30:16,274 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.007s)
+2025-07-23 10:30:16,287 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 10:30:16,288 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 10:30:16,316 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 10:30:16,543 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23 10:30:16,671 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:30:16,678 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 0.8 seconds (process running for 927.777)
+2025-07-23 10:30:21,202 INFO o.a.j.l.DirectJDKLog [tomcat-shutdown] Pausing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:30:21,208 INFO o.a.j.l.DirectJDKLog [Thread-45] Stopping ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:30:21,210 INFO c.z.h.HikariDataSource [Thread-45] HikariPool-10 - Shutdown initiated...
+2025-07-23 10:30:21,213 INFO c.z.h.HikariDataSource [Thread-45] HikariPool-10 - Shutdown completed.
+2025-07-23 10:30:21,301 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 8104 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:30:21,302 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:30:21,564 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:30:21,564 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:30:21,564 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:30:21,580 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:30:21,607 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-11 - Starting...
+2025-07-23 10:30:21,621 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-11 - Added connection com.mysql.cj.jdbc.ConnectionImpl@71395116
+2025-07-23 10:30:21,622 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-11 - Start completed.
+2025-07-23 10:30:21,626 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 10:30:21,644 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.008s)
+2025-07-23 10:30:21,656 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 10:30:21,657 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 10:30:21,684 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 10:30:21,946 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23 10:30:22,089 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:30:22,095 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 0.817 seconds (process running for 933.194)
+2025-07-23 10:31:11,849 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-23 10:31:11,853 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-2] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-07-23T05:01:11Z, a difference of 368981853 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-07-23 10:31:11,868 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-2] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<in.org.genSpark.dto.ApiResponse<?>> in.org.genSpark.controller.AuthController.registerUser(in.org.genSpark.dto.RegisterUserDto): [Field error in object 'registerUserDto' on field 'role': rejected value [null]; codes [NotNull.registerUserDto.role,NotNull.role,NotNull.in.org.genSpark.enums.Role,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registerUserDto.role,role]; arguments []; default message [role]]; default message [A role (STARTUP, INVESTOR) must be specified]] ]
+2025-07-23 10:32:59,819 INFO o.a.j.l.DirectJDKLog [tomcat-shutdown] Pausing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:32:59,826 INFO o.a.j.l.DirectJDKLog [Thread-49] Stopping ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:32:59,829 INFO c.z.h.HikariDataSource [Thread-49] HikariPool-11 - Shutdown initiated...
+2025-07-23 10:32:59,831 INFO c.z.h.HikariDataSource [Thread-49] HikariPool-11 - Shutdown completed.
+2025-07-23 10:32:59,916 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 8104 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:32:59,916 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:33:00,163 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:33:00,164 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:33:00,164 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:33:00,184 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:33:00,211 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-12 - Starting...
+2025-07-23 10:33:00,223 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-12 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3aa3ccb
+2025-07-23 10:33:00,223 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-12 - Start completed.
+2025-07-23 10:33:00,228 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 10:33:00,245 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.008s)
+2025-07-23 10:33:00,259 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 10:33:00,260 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 10:33:00,285 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 10:35:24,442 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 17008 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:35:24,447 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:35:26,644 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:35:26,649 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:35:26,649 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:35:26,718 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:35:27,058 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2025-07-23 10:35:27,494 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6a5ce54b
+2025-07-23 10:35:27,497 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2025-07-23 10:35:27,559 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 10:35:27,643 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.045s)
+2025-07-23 10:35:27,666 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 10:35:27,672 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 10:35:28,292 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 10:35:30,061 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23 10:35:30,847 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:35:30,884 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 7.208 seconds (process running for 7.699)
+2025-07-23 10:35:56,081 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-23 10:35:56,141 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-1] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-07-23T05:05:56Z, a difference of 369266140 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-07-23 10:35:56,192 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-1] Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/auth.]
+2025-07-23 10:36:24,178 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-4] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-07-23T05:06:24Z, a difference of 369294178 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-07-23 10:36:24,184 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-4] Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/auth.]
+2025-07-23 10:36:29,674 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-6] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-07-23T05:06:29Z, a difference of 369299673 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-07-23 10:36:29,678 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-6] Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/auth.]
+2025-07-23 10:37:02,580 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-8] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-07-23T05:07:02Z, a difference of 369332580 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-07-23 10:37:17,176 INFO o.a.j.l.DirectJDKLog [tomcat-shutdown] Pausing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:37:17,182 INFO o.a.j.l.DirectJDKLog [Thread-5] Stopping ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:37:17,191 INFO c.z.h.HikariDataSource [Thread-5] HikariPool-1 - Shutdown initiated...
+2025-07-23 10:37:17,200 INFO c.z.h.HikariDataSource [Thread-5] HikariPool-1 - Shutdown completed.
+2025-07-23 10:37:17,309 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 17008 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:37:17,309 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:37:17,811 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:37:17,812 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:37:17,813 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:37:17,838 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:37:17,887 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-2 - Starting...
+2025-07-23 10:37:17,907 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5b1277a7
+2025-07-23 10:37:17,908 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-2 - Start completed.
+2025-07-23 10:37:17,913 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 10:37:17,937 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.009s)
+2025-07-23 10:37:17,954 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 10:37:17,956 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 10:37:17,994 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 10:37:18,337 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23 10:37:18,559 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:37:18,565 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 1.303 seconds (process running for 115.38)
+2025-07-23 10:38:23,721 INFO o.a.j.l.DirectJDKLog [tomcat-shutdown] Pausing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:38:23,727 INFO o.a.j.l.DirectJDKLog [Thread-7] Stopping ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:38:23,731 INFO c.z.h.HikariDataSource [Thread-7] HikariPool-2 - Shutdown initiated...
+2025-07-23 10:38:23,736 INFO c.z.h.HikariDataSource [Thread-7] HikariPool-2 - Shutdown completed.
+2025-07-23 10:38:23,823 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 17008 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:38:23,824 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:38:24,237 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:38:24,238 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:38:24,238 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:38:24,265 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:38:24,307 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-3 - Starting...
+2025-07-23 10:38:24,325 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5db32a7
+2025-07-23 10:38:24,326 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-3 - Start completed.
+2025-07-23 10:38:24,331 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 10:38:24,350 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.008s)
+2025-07-23 10:38:24,361 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 10:38:24,363 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 10:38:24,392 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 10:38:24,696 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23 10:38:24,871 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:38:24,877 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 1.085 seconds (process running for 181.692)
+2025-07-23 10:38:36,607 INFO o.a.j.l.DirectJDKLog [tomcat-shutdown] Pausing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:38:36,613 INFO o.a.j.l.DirectJDKLog [Thread-11] Stopping ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:38:36,617 INFO c.z.h.HikariDataSource [Thread-11] HikariPool-3 - Shutdown initiated...
+2025-07-23 10:38:36,621 INFO c.z.h.HikariDataSource [Thread-11] HikariPool-3 - Shutdown completed.
+2025-07-23 10:38:36,708 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 17008 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:38:36,708 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:38:37,038 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:38:37,038 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:38:37,038 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:38:37,057 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:38:37,097 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-4 - Starting...
+2025-07-23 10:38:37,113 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@71487fb7
+2025-07-23 10:38:37,114 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-4 - Start completed.
+2025-07-23 10:38:37,119 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 10:38:37,141 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.009s)
+2025-07-23 10:38:37,155 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 10:38:37,156 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 10:38:37,185 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 10:38:37,446 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23 10:38:37,598 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:38:37,603 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 0.926 seconds (process running for 194.418)
+2025-07-23 10:38:44,208 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-3] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-23 10:38:44,213 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-3] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-07-23T05:08:44Z, a difference of 369434213 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-07-23 10:38:44,249 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-3] Resolved [java.lang.IllegalStateException: Email already exists.]
+2025-07-23 10:38:58,349 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-2] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-07-23T05:08:58Z, a difference of 369448349 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-07-23 10:41:52,406 INFO o.a.j.l.DirectJDKLog [tomcat-shutdown] Pausing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:41:52,412 INFO o.a.j.l.DirectJDKLog [Thread-15] Stopping ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:41:52,414 INFO c.z.h.HikariDataSource [Thread-15] HikariPool-4 - Shutdown initiated...
+2025-07-23 10:41:52,419 INFO c.z.h.HikariDataSource [Thread-15] HikariPool-4 - Shutdown completed.
+2025-07-23 10:41:52,509 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 17008 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:41:52,509 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:41:52,863 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:41:52,863 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:41:52,863 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:41:52,883 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:41:52,927 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-5 - Starting...
+2025-07-23 10:41:52,943 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2077839a
+2025-07-23 10:41:52,943 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-5 - Start completed.
+2025-07-23 10:41:52,949 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 10:41:52,971 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.009s)
+2025-07-23 10:41:52,985 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 10:41:52,987 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 10:41:53,019 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 10:41:53,290 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23 10:41:53,462 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:41:53,476 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 0.997 seconds (process running for 390.291)
+2025-07-23 10:42:06,211 INFO o.a.j.l.DirectJDKLog [tomcat-shutdown] Pausing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:42:06,220 INFO o.a.j.l.DirectJDKLog [Thread-19] Stopping ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:42:06,222 INFO c.z.h.HikariDataSource [Thread-19] HikariPool-5 - Shutdown initiated...
+2025-07-23 10:42:06,226 INFO c.z.h.HikariDataSource [Thread-19] HikariPool-5 - Shutdown completed.
+2025-07-23 10:42:06,311 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 17008 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:42:06,312 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:42:06,620 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:42:06,620 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:42:06,621 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:42:06,643 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:42:06,677 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-6 - Starting...
+2025-07-23 10:42:06,691 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1e164ea0
+2025-07-23 10:42:06,691 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-6 - Start completed.
+2025-07-23 10:42:06,695 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 10:42:06,713 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.008s)
+2025-07-23 10:42:06,723 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 10:42:06,724 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 10:42:06,750 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 10:42:06,979 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23 10:42:07,113 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:42:07,121 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 0.837 seconds (process running for 403.937)
+2025-07-23 10:42:42,504 INFO o.a.j.l.DirectJDKLog [tomcat-shutdown] Pausing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:42:42,511 INFO o.a.j.l.DirectJDKLog [Thread-23] Stopping ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:42:42,514 INFO c.z.h.HikariDataSource [Thread-23] HikariPool-6 - Shutdown initiated...
+2025-07-23 10:42:42,519 INFO c.z.h.HikariDataSource [Thread-23] HikariPool-6 - Shutdown completed.
+2025-07-23 10:42:42,607 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 17008 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:42:42,608 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:42:42,926 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:42:42,926 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:42:42,926 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:42:42,947 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:42:42,986 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-7 - Starting...
+2025-07-23 10:42:43,002 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7e4f1dfb
+2025-07-23 10:42:43,004 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-7 - Start completed.
+2025-07-23 10:42:43,008 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 10:42:43,026 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.008s)
+2025-07-23 10:42:43,039 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 10:42:43,040 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 10:42:43,065 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 10:42:43,306 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23 10:42:43,459 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:42:43,473 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 0.894 seconds (process running for 440.287)
+2025-07-23 10:44:23,524 INFO o.a.j.l.DirectJDKLog [tomcat-shutdown] Pausing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:44:23,533 INFO o.a.j.l.DirectJDKLog [Thread-27] Stopping ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:44:23,535 INFO c.z.h.HikariDataSource [Thread-27] HikariPool-7 - Shutdown initiated...
+2025-07-23 10:44:23,538 INFO c.z.h.HikariDataSource [Thread-27] HikariPool-7 - Shutdown completed.
+2025-07-23 10:44:23,620 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 17008 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 10:44:23,620 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 10:44:23,914 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:44:23,914 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 10:44:23,914 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 10:44:23,930 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 10:44:23,958 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-8 - Starting...
+2025-07-23 10:44:23,972 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-8 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ea3e640
+2025-07-23 10:44:23,972 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-8 - Start completed.
+2025-07-23 10:44:23,977 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 10:44:23,993 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.007s)
+2025-07-23 10:44:24,010 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 10:44:24,011 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 10:44:24,036 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 10:44:24,304 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23 10:44:24,444 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-07-23 10:44:24,450 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 0.855 seconds (process running for 541.266)
+2025-07-23 10:45:21,311 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-4] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-23 10:45:21,316 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-4] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-07-23T05:15:21Z, a difference of 369831316 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-07-23 10:45:32,169 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-5] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-07-23T05:15:32Z, a difference of 369842169 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-07-23 10:45:32,179 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-5] Resolved [java.lang.IllegalStateException: Email already exists.]
+2025-07-23 10:50:07,939 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-7] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-07-23T05:20:07Z, a difference of 370117939 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-07-23 10:50:07,952 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-7] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('}' (code 125)): was expecting double-quote to start field name]
+2025-07-23 10:50:47,163 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-8] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-07-23T05:20:47Z, a difference of 370157162 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-07-23 10:55:13,348 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-6] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+2025-07-23 11:33:50,592 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 17592 (C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\user-service.zip_expanded\user-service)
+2025-07-23 11:33:50,598 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-07-23 11:33:55,007 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-07-23 11:33:55,014 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-07-23 11:33:55,015 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-23 11:33:55,149 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-07-23 11:33:55,756 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2025-07-23 11:33:56,586 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6da8fb8b
+2025-07-23 11:33:56,590 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2025-07-23 11:33:56,702 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-07-23 11:33:56,846 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.081s)
+2025-07-23 11:33:56,889 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-07-23 11:33:56,899 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-07-23 11:33:58,566 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-23 11:34:03,579 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-23 11:34:05,046 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-07-23 11:34:05,110 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 16.332 seconds (process running for 17.663)
+2025-07-23 11:40:21,379 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-3] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-23 11:40:21,399 ERROR o.a.j.l.DirectJDKLog [http-nio-8080-exec-3] Servlet.service() for servlet [dispatcherServlet] in context with path [/genspark/api/v1] threw exception
+java.lang.IllegalArgumentException: Invalid contextPath '/genspark/api/v1': must match the start of requestPath: '//genspark/api/v1/auth/register'
+	at org.springframework.http.server.DefaultRequestPath.validateContextPath(DefaultRequestPath.java:81)
+	at org.springframework.http.server.DefaultRequestPath.initContextPath(DefaultRequestPath.java:56)
+	at org.springframework.http.server.DefaultRequestPath.<init>(DefaultRequestPath.java:41)
+	at org.springframework.http.server.RequestPath.parse(RequestPath.java:79)
+	at org.springframework.web.util.ServletRequestPathUtils$ServletRequestPath.parse(ServletRequestPathUtils.java:276)
+	at org.springframework.web.util.ServletRequestPathUtils.parseAndCache(ServletRequestPathUtils.java:67)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:50)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-07-23 11:40:30,685 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-4] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-07-23T06:10:30Z, a difference of 373140684 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-07-23 11:40:31,202 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-4] Resolved [java.lang.IllegalStateException: Email already exists.]
+2025-07-23 11:44:49,492 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-6] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-07-23T06:14:49Z, a difference of 373399492 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-07-23 12:07:32,173 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-1] Resolved [java.lang.IllegalStateException: Phone number already exists.]
+2025-07-23 12:08:55,949 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-2] Resolved [java.lang.IllegalStateException: Phone number already exists.]
+2025-07-23 12:47:20,560 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1:housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m19s372ms659µs100ns).
+2025-07-23 12:50:43,320 ERROR o.a.j.l.DirectJDKLog [http-nio-8080-exec-3] Servlet.service() for servlet [dispatcherServlet] in context with path [/genspark/api/v1] threw exception
+java.lang.IllegalArgumentException: Invalid contextPath '/genspark/api/v1': must match the start of requestPath: '//genspark/api/v1/users/me'
+	at org.springframework.http.server.DefaultRequestPath.validateContextPath(DefaultRequestPath.java:81)
+	at org.springframework.http.server.DefaultRequestPath.initContextPath(DefaultRequestPath.java:56)
+	at org.springframework.http.server.DefaultRequestPath.<init>(DefaultRequestPath.java:41)
+	at org.springframework.http.server.RequestPath.parse(RequestPath.java:79)
+	at org.springframework.web.util.ServletRequestPathUtils$ServletRequestPath.parse(ServletRequestPathUtils.java:276)
+	at org.springframework.web.util.ServletRequestPathUtils.parseAndCache(ServletRequestPathUtils.java:67)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:50)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-07-23 12:51:20,365 ERROR o.a.j.l.DirectJDKLog [http-nio-8080-exec-6] Servlet.service() for servlet [dispatcherServlet] in context with path [/genspark/api/v1] threw exception
+java.lang.IllegalArgumentException: Invalid contextPath '/genspark/api/v1': must match the start of requestPath: '//genspark/api/v1/users/me'
+	at org.springframework.http.server.DefaultRequestPath.validateContextPath(DefaultRequestPath.java:81)
+	at org.springframework.http.server.DefaultRequestPath.initContextPath(DefaultRequestPath.java:56)
+	at org.springframework.http.server.DefaultRequestPath.<init>(DefaultRequestPath.java:41)
+	at org.springframework.http.server.RequestPath.parse(RequestPath.java:79)
+	at org.springframework.web.util.ServletRequestPathUtils$ServletRequestPath.parse(ServletRequestPathUtils.java:276)
+	at org.springframework.web.util.ServletRequestPathUtils.parseAndCache(ServletRequestPathUtils.java:67)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:50)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-07-23 12:51:30,085 ERROR o.a.j.l.DirectJDKLog [http-nio-8080-exec-7] Servlet.service() for servlet [dispatcherServlet] in context with path [/genspark/api/v1] threw exception
+java.lang.IllegalArgumentException: Invalid contextPath '/genspark/api/v1': must match the start of requestPath: '//genspark/api/v1/users/me'
+	at org.springframework.http.server.DefaultRequestPath.validateContextPath(DefaultRequestPath.java:81)
+	at org.springframework.http.server.DefaultRequestPath.initContextPath(DefaultRequestPath.java:56)
+	at org.springframework.http.server.DefaultRequestPath.<init>(DefaultRequestPath.java:41)
+	at org.springframework.http.server.RequestPath.parse(RequestPath.java:79)
+	at org.springframework.web.util.ServletRequestPathUtils$ServletRequestPath.parse(ServletRequestPathUtils.java:276)
+	at org.springframework.web.util.ServletRequestPathUtils.parseAndCache(ServletRequestPathUtils.java:67)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:50)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)

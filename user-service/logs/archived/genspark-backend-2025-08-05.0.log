@@ -1,0 +1,255 @@
+2025-08-05 09:30:43,575 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 17008 (C:\Users\jhask\Downloads\Project\Yout_Connect\genSpark-Backend\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\genSpark-Backend\user-service)
+2025-08-05 09:30:43,583 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-08-05 09:30:48,040 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-05 09:30:48,045 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-08-05 09:30:48,047 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-08-05 09:30:48,167 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-08-05 09:30:48,803 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2025-08-05 09:30:49,782 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@77a57d59
+2025-08-05 09:30:49,786 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2025-08-05 09:30:49,972 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-08-05 09:30:50,167 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.112s)
+2025-08-05 09:30:50,210 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-08-05 09:30:50,218 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-08-05 09:30:51,515 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-05 09:30:55,553 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-05 09:30:56,939 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-08-05 09:30:57,016 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 14.954 seconds (process running for 16.108)
+2025-08-05 09:33:21,363 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-05 09:35:00,037 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 09:35:00,068 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 09:38:20,953 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-5] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-08-05T04:08:20Z, a difference of 1489010951 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-08-05 09:38:21,028 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-5] Resolved [java.lang.IllegalStateException: OTP validation not completed.]
+2025-08-05 09:39:04,498 INFO i.o.g.s.i.EmailServiceImpl [http-nio-8080-exec-7] HTML OTP verification email sent to jhasaketansa86@gmail.com
+2025-08-05 09:40:00,012 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 09:40:00,023 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 09:45:00,011 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 09:45:00,028 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 09:50:00,008 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 09:50:00,017 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 09:50:22,883 INFO i.o.g.s.i.EmailServiceImpl [http-nio-8080-exec-1] HTML OTP verification email sent to jhasaketansa86@gmail.com
+2025-08-05 09:52:31,934 INFO i.o.g.s.i.EmailServiceImpl [http-nio-8080-exec-6] HTML OTP verification email sent to jhasaketansa86@gmail.com
+2025-08-05 09:53:39,669 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-8] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-08-05T04:23:39Z, a difference of 1489929669 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-08-05 09:53:46,521 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-9] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-08-05T04:23:46Z, a difference of 1489936519 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-08-05 09:53:46,539 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-9] Resolved [java.lang.IllegalStateException: OTP validation not completed.]
+2025-08-05 09:53:51,475 WARN i.o.g.s.JwtAuthenticationFilter [http-nio-8080-exec-1] JWT token processing error: JWT expired at 2025-07-18T22:31:30Z. Current time: 2025-08-05T04:23:51Z, a difference of 1489941475 milliseconds.  Allowed clock skew: 0 milliseconds.
+2025-08-05 09:53:51,489 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-1] Resolved [java.lang.IllegalStateException: OTP validation not completed.]
+2025-08-05 09:55:00,009 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 09:55:00,016 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 10:00:00,014 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 10:00:00,024 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 10:00:57,556 INFO i.o.g.s.i.EmailServiceImpl [http-nio-8080-exec-3] HTML OTP verification email sent to jhasketansa63@gmail.com
+2025-08-05 10:05:00,017 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 10:05:00,030 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 10:10:00,005 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 10:10:00,014 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 10:12:04,271 INFO i.o.g.s.i.EmailServiceImpl [http-nio-8080-exec-1] HTML OTP verification email sent to dasranjan1753@gmail.com
+2025-08-05 10:15:00,010 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 10:15:00,018 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 10:17:29,880 INFO i.o.g.s.i.EmailServiceImpl [http-nio-8080-exec-6] HTML OTP verification email sent to dasranjan1753@gmail.com
+2025-08-05 10:20:00,015 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 10:20:00,024 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 10:25:00,002 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 10:25:00,013 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 10:30:00,008 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 10:30:00,024 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 10:35:00,006 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 10:35:00,014 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 10:40:00,011 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 10:40:00,020 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 10:45:00,004 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 10:45:00,017 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 10:50:00,005 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 10:50:00,016 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 10:55:00,005 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 10:55:00,013 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 11:00:00,003 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 11:00:00,009 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 11:01:18,163 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1:housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=56s946ms766µs600ns).
+2025-08-05 11:44:39,473 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 22368 (C:\Users\jhask\Downloads\Project\Yout_Connect\genSpark-Backend\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\genSpark-Backend\user-service)
+2025-08-05 11:44:39,479 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-08-05 11:44:44,288 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-05 11:44:44,292 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-08-05 11:44:44,292 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-08-05 11:44:44,427 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-08-05 11:44:45,182 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2025-08-05 11:44:46,147 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@22a9906
+2025-08-05 11:44:46,155 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2025-08-05 11:44:46,330 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-08-05 11:44:46,506 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.107s)
+2025-08-05 11:44:46,560 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-08-05 11:44:46,570 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-08-05 11:44:48,133 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-05 11:44:53,157 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-05 11:44:54,941 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-08-05 11:44:54,973 WARN o.s.c.s.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-08-05 11:44:54,991 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Shutdown initiated...
+2025-08-05 11:44:55,017 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Shutdown completed.
+2025-08-05 11:44:55,152 ERROR o.s.b.d.LoggingFailureAnalysisReporter [restartedMain] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2025-08-05 11:45:27,723 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 21112 (C:\Users\jhask\Downloads\Project\Yout_Connect\genSpark-Backend\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\genSpark-Backend\user-service)
+2025-08-05 11:45:27,729 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-08-05 11:45:32,385 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-05 11:45:32,392 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-08-05 11:45:32,393 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-08-05 11:45:32,537 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-08-05 11:45:33,209 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2025-08-05 11:45:34,120 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@15e097ba
+2025-08-05 11:45:34,127 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2025-08-05 11:45:34,265 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-08-05 11:45:34,429 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.102s)
+2025-08-05 11:45:34,477 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-08-05 11:45:34,486 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-08-05 11:45:35,929 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-05 11:45:40,368 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-05 11:45:41,995 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2025-08-05 11:45:42,083 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 15.844 seconds (process running for 17.189)
+2025-08-05 11:46:17,120 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-05 11:50:00,045 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 11:50:00,073 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 11:55:00,016 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 11:55:00,038 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 12:00:00,017 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 12:00:00,029 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 12:05:00,008 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 12:05:00,027 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 12:10:00,018 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 12:10:00,078 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 12:15:00,006 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 12:15:00,024 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 12:20:00,006 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 12:20:00,026 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 12:21:36,414 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1:housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m1s647ms686µs199ns).
+2025-08-05 12:25:31,655 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 12:25:31,659 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 12:30:00,016 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 12:30:00,020 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 12:35:00,015 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 12:35:00,020 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 12:35:29,080 INFO o.a.j.l.DirectJDKLog [tomcat-shutdown] Pausing ProtocolHandler ["http-nio-8080"]
+2025-08-05 12:35:29,084 INFO o.a.j.l.DirectJDKLog [Thread-5] Stopping ProtocolHandler ["http-nio-8080"]
+2025-08-05 12:35:29,103 INFO c.z.h.HikariDataSource [Thread-5] HikariPool-1 - Shutdown initiated...
+2025-08-05 12:35:29,112 INFO c.z.h.HikariDataSource [Thread-5] HikariPool-1 - Shutdown completed.
+2025-08-05 12:35:35,189 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 21112 (C:\Users\jhask\Downloads\Project\Yout_Connect\genSpark-Backend\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\genSpark-Backend\user-service)
+2025-08-05 12:35:35,190 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-08-05 12:35:35,660 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-08-05 12:35:35,661 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-08-05 12:35:35,703 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-08-05 12:35:35,763 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-2 - Starting...
+2025-08-05 12:35:35,824 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@385985ab
+2025-08-05 12:35:35,824 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-2 - Start completed.
+2025-08-05 12:35:35,836 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-08-05 12:35:35,865 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.010s)
+2025-08-05 12:35:35,879 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-08-05 12:35:35,883 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-08-05 12:35:35,936 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-05 12:35:36,651 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-05 12:35:36,874 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 1.719 seconds (process running for 3011.982)
+2025-08-05 12:35:38,304 INFO c.z.h.HikariDataSource [Thread-7] HikariPool-2 - Shutdown initiated...
+2025-08-05 12:35:38,317 INFO c.z.h.HikariDataSource [Thread-7] HikariPool-2 - Shutdown completed.
+2025-08-05 12:35:38,408 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 21112 (C:\Users\jhask\Downloads\Project\Yout_Connect\genSpark-Backend\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\genSpark-Backend\user-service)
+2025-08-05 12:35:38,408 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-08-05 12:35:38,800 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-08-05 12:35:38,800 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-08-05 12:35:38,820 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-08-05 12:35:38,854 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-3 - Starting...
+2025-08-05 12:35:38,875 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6e2ecad1
+2025-08-05 12:35:38,876 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-3 - Start completed.
+2025-08-05 12:35:38,881 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-08-05 12:35:38,902 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.008s)
+2025-08-05 12:35:38,916 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-08-05 12:35:38,918 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-08-05 12:35:38,954 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-05 12:35:39,425 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-05 12:35:39,595 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 1.224 seconds (process running for 3014.701)
+2025-08-05 12:36:05,630 INFO c.z.h.HikariDataSource [Thread-17] HikariPool-3 - Shutdown initiated...
+2025-08-05 12:36:05,634 INFO c.z.h.HikariDataSource [Thread-17] HikariPool-3 - Shutdown completed.
+2025-08-05 12:36:05,725 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 21112 (C:\Users\jhask\Downloads\Project\Yout_Connect\genSpark-Backend\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\genSpark-Backend\user-service)
+2025-08-05 12:36:05,726 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-08-05 12:36:06,116 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-08-05 12:36:06,116 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-08-05 12:36:06,135 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-08-05 12:36:06,192 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-4 - Starting...
+2025-08-05 12:36:06,208 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1e3de42d
+2025-08-05 12:36:06,209 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-4 - Start completed.
+2025-08-05 12:36:06,215 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-08-05 12:36:06,233 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.008s)
+2025-08-05 12:36:06,245 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-08-05 12:36:06,246 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-08-05 12:36:06,276 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-05 12:36:06,674 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-05 12:36:06,835 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 1.143 seconds (process running for 3041.94)
+2025-08-05 12:36:29,492 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-05 12:36:55,620 INFO c.z.h.HikariDataSource [Thread-21] HikariPool-4 - Shutdown initiated...
+2025-08-05 12:36:55,625 INFO c.z.h.HikariDataSource [Thread-21] HikariPool-4 - Shutdown completed.
+2025-08-05 12:36:55,715 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 21112 (C:\Users\jhask\Downloads\Project\Yout_Connect\genSpark-Backend\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\genSpark-Backend\user-service)
+2025-08-05 12:36:55,715 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-08-05 12:36:56,078 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-08-05 12:36:56,079 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-08-05 12:36:56,096 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-08-05 12:36:56,135 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-5 - Starting...
+2025-08-05 12:36:56,148 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4804d084
+2025-08-05 12:36:56,149 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-5 - Start completed.
+2025-08-05 12:36:56,154 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-08-05 12:36:56,176 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.008s)
+2025-08-05 12:36:56,188 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-08-05 12:36:56,190 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-08-05 12:36:56,219 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-05 12:36:56,631 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-05 12:36:56,774 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 1.087 seconds (process running for 3091.88)
+2025-08-05 12:37:03,356 INFO c.z.h.HikariDataSource [Thread-25] HikariPool-5 - Shutdown initiated...
+2025-08-05 12:37:03,360 INFO c.z.h.HikariDataSource [Thread-25] HikariPool-5 - Shutdown completed.
+2025-08-05 12:37:03,441 INFO o.s.b.StartupInfoLogger [restartedMain] Starting UserServiceApplication using Java 21.0.3 with PID 21112 (C:\Users\jhask\Downloads\Project\Yout_Connect\genSpark-Backend\user-service\target\classes started by jhask in C:\Users\jhask\Downloads\Project\Yout_Connect\genSpark-Backend\user-service)
+2025-08-05 12:37:03,441 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2025-08-05 12:37:03,845 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2025-08-05 12:37:03,845 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-08-05 12:37:03,868 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2025-08-05 12:37:03,914 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-6 - Starting...
+2025-08-05 12:37:03,933 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2e28874
+2025-08-05 12:37:03,934 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-6 - Start completed.
+2025-08-05 12:37:03,939 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Database: jdbc:mysql://localhost:3306/genspark_db?createDatabaseIfNotExist=true (MySQL 8.0)
+2025-08-05 12:37:03,964 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Successfully validated 1 migration (execution time 00:00.010s)
+2025-08-05 12:37:03,982 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Current version of schema `genspark_db`: 1
+2025-08-05 12:37:03,984 INFO o.f.c.i.l.s.Slf4jLog [restartedMain] Schema `genspark_db` is up to date. No migration necessary.
+2025-08-05 12:37:04,025 WARN o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-05 12:37:04,508 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-05 12:37:04,693 INFO o.s.b.StartupInfoLogger [restartedMain] Started UserServiceApplication in 1.278 seconds (process running for 3099.799)
+2025-08-05 12:38:22,614 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-05 12:40:00,008 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 12:40:00,012 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 12:45:00,018 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 12:45:00,029 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 12:45:46,763 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8080-exec-5] Resolved [org.springframework.security.authentication.BadCredentialsException: Invalid credentials]
+2025-08-05 12:47:19,259 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-6:housekeeper] HikariPool-6 - Thread starvation or clock leap detected (housekeeper delta=1m45s38ms475µs500ns).
+2025-08-05 12:51:15,043 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 12:51:15,051 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 12:55:00,010 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 12:55:00,020 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 13:00:00,006 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 13:00:00,015 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 13:02:27,112 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-6:housekeeper] HikariPool-6 - Thread starvation or clock leap detected (housekeeper delta=2m7s678ms378µs300ns).
+2025-08-05 13:08:45,932 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-6:housekeeper] HikariPool-6 - Thread starvation or clock leap detected (housekeeper delta=3m18s769ms239µs900ns).
+2025-08-05 13:09:26,442 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 13:09:26,482 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 13:10:00,018 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 13:10:00,040 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 13:13:40,805 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-6:housekeeper] HikariPool-6 - Thread starvation or clock leap detected (housekeeper delta=1m24s802ms272µs500ns).
+2025-08-05 13:16:03,131 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 13:16:03,163 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 13:48:36,709 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-6:housekeeper] HikariPool-6 - Thread starvation or clock leap detected (housekeeper delta=31m25s850ms247µs100ns).
+2025-08-05 13:51:08,400 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 13:51:08,405 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
+2025-08-05 13:55:00,010 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] Running meeting reminder task...
+2025-08-05 13:55:00,023 INFO i.o.g.s.i.ScheduledTaskServiceImpl [scheduling-1] No upcoming meetings found needing a reminder.
