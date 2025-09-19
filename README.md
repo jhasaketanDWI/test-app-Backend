@@ -1,118 +1,103 @@
-# GenSpark- Connect, Create & Capitalize
+# API Module
 
-**GenSpark** is a comprehensive platform designed to bridge the gap between emerging startups and potential investors or evaluators. Built on a robust and scalable **microservices architecture**, the system provides a seamless experience for all users.
+This folder contains the Django app for the backend API of the project management and test automation platform.
 
-## Key Features
+## Features
 
-- Connects startups with evaluators and investors  
-- Modular microservices architecture  
-- Cloud-native and highly scalable  
-- Secure and reliable communication between services  
+- **Custom User Model**: Email-based authentication with roles (Admin, Owner, Manager, Developer, Tester).
+- **Project Management**: Projects, members, epics, sprints, tickets, tasks, tags.
+- **Test Case Management**: Manual and AI-generated test cases, automation scripts, attachments, comments.
+- **Subscription & Billing**: Subscription plans, subscriptions, invoices.
+- **OAuth & JWT Authentication**: Google OAuth2, JWT tokens, social login endpoints.
+- **Permissions**: Custom permissions for owner/admin access.
+- **Audit Fields**: Tracks creation/update times and IP addresses.
 
-## Architecture Overview
+## Main Files
 
-The platform's architecture leverages **modern cloud-native technologies** to ensure resilience and maintainability.
+- [`models.py`](models.py): All database models.
+- [`serializers.py`](serializers.py): DRF serializers for API endpoints.
+- [`views.py`](views.py): ViewSets and API logic.
+- [`urls.py`](urls.py): API routing, including nested routers.
+- [`permissions.py`](permissions.py): Custom permission classes.
+- [`utils.py`](utils.py): Utility functions (e.g., get client IP).
+- [`apps.py`](apps.py): Django app config.
+- [`admin.py`](admin.py): Admin registration (customize as needed).
+- [`tests.py`](tests.py): Unit tests (add your tests here).
+- [`migrations/`](migrations): Database migrations.
 
-### Frontend
+## Endpoints
 
-- **React.js**: A dynamic and responsive user interface.
-- Communicates with backend services via **Spring Cloud Gateway**.
+- `/api/users/` - User CRUD
+- `/api/admin/users/` - Admin user CRUD
+- `/api/projects/` - Project CRUD
+- `/api/projects/{project_pk}/testcases/` - Nested test cases per project
+- `/api/testcases/` - Test case CRUD
+- `/api/subscription-plans/` - Subscription plan CRUD
+- `/api/subscriptions/` - Subscription CRUD
+- `/api/invoices/` - Invoice CRUD
+- `/api/members/` - Project member CRUD
+- `/api/epics/` - Epic CRUD
+- `/api/sprints/` - Sprint CRUD
+- `/api/tickets/` - Ticket CRUD
+- `/api/token/` - JWT token obtain
+- `/api/token/refresh/` - JWT token refresh
+- `/api/auth/google/` - Google OAuth2 login
 
-### Backend
+## Usage
 
-- **Spring Boot Microservices**: Each service is responsible for a specific business domain:
-  - **User Management**
-  - **Startup Profile Management**
-  - **Evaluation Workflows**
-  - **Payment Processing**
-  - **Document Management**
-  - **User Verification**
+1. **Install dependencies**:  
+   `pip install -r requirements.txt`
 
-- **Spring Cloud Gateway**: Acts as a secure entry point to route API requests.
-- **Eureka**: Handles **service discovery**, allowing microservices to register and communicate dynamically.
-- **Event-Driven Communication**: For example, a startup submission triggers an automatic evaluation process.
+2. **Apply migrations**:  
+   `python manage.py migrate`
 
-## Benefits
+3. **Run server**:  
+   `python manage.py runserver`
 
-- **Loose Coupling**: Ensures that services remain independent, enabling easier updates and scalability.  
-- **High Performance**: Event-driven architecture enhances responsiveness and resource utilization.  
-- **Reliability**: Designed for robustness and fault tolerance to support critical operations.  
+4. **Access API**:  
+   Use the endpoints above with JWT authentication.
+
+# Requirements for Django API Backend (MySQL)
+
+This project uses **Django REST Framework** with MySQL as the database.  
+Below is the list of dependencies required to run the backend.
 
 ---
 
-GenSparkConnect offers a sophisticated, **feature-rich ecosystem** aimed at fostering innovation. It empowers the **next generation of entrepreneurs** by connecting them with the resources they need to **succeed**.
+## Core Dependencies
+
+- `Django>=4.2,<5.0` – Web framework  
+- `djangorestframework>=3.14` – REST API toolkit  
+- `djangorestframework-simplejwt>=5.2` – JWT authentication support  
+- `django-oauth-toolkit>=2.3` – OAuth2 authentication  
+- `django-cors-headers>=4.0` – Cross-origin resource sharing (CORS) support  
+- `mysqlclient>=2.2` – MySQL database driver  
+- `requests>=2.31` – HTTP requests library  
+- `google-auth>=2.28` – Google authentication client  
+- `google-auth-oauthlib>=1.2` – Google OAuth2 client  
+- `PyJWT>=2.8` – JSON Web Token utilities  
+- `drf-nested-routers>=0.93` – Nested routing for DRF  
+- `Pillow>=10.0` – Image processing support  
 
 ---
 
-## System Architecture Diagram
+## Optional Dependencies
 
-```mermaid
-graph TD
-    subgraph "User's Browser"
-        Frontend[React Frontend]
-    end
+### For Testing
+- `pytest>=7.4` – Testing framework  
+- `pytest-django>=4.5` – Django plugin for pytest  
 
-    subgraph "Cloud Platform (e.g., AWS)"
-        API_Gateway["API Gateway<br>(Spring Cloud Gateway)"]
+### For Environment Variables
+- `python-dotenv>=1.0` – Load environment variables from `.env` file  
 
-        subgraph "Core Business Services"
-            User_Service[User Service]
-            Startup_Service[Startup Service]
-            Evaluation_Service[Evaluation Service]
-        end
-        
-        subgraph "Specialized Support Services"
-            Verification_Service[Verification Service]
-            Payment_Service[Payment Service]
-            Document_Service[Document Service]
-            Notification_Service[Notification Service]
-        end
+---
 
-        subgraph "Infrastructure & Databases"
-            Service_Registry["Service Registry<br>(Eureka)"]
-            User_DB[(User DB)]
-            Startup_DB[(Startup DB)]
-            Evaluation_DB[(Evaluation DB)]
-            Verification_DB[(Verification DB)]
-            Payment_DB[(Payment DB)]
-            Document_DB[(Document DB)]
-        end
-    end
+## Notes
+- The app uses a **custom user model** (`api.User`).  
+- Supports **JWT** and **Google OAuth2** authentication.  
+- Add any other dependencies your code might require in the future.  
 
-    %% --- Connections ---
 
-    %% Client to Gateway
-    Frontend -->|HTTPS API Calls| API_Gateway
+---
 
-    %% Gateway to Services
-    API_Gateway -->|Routes Requests| User_Service
-    API_Gateway -->|Routes Requests| Startup_Service
-    API_Gateway -->|Routes Requests| Evaluation_Service
-    API_Gateway -->|Routes Requests| Verification_Service
-    API_Gateway -->|Routes Requests| Payment_Service
-    API_Gateway -->|Routes Requests| Document_Service
-    API_Gateway -->|Routes Requests| Notification_Service
-
-    %% Service Discovery
-    User_Service <-->|Registers & Discovers| Service_Registry
-    Startup_Service <-->|Registers & Discovers| Service_Registry
-    Evaluation_Service <-->|Registers & Discovers| Service_Registry
-    Verification_Service <-->|Registers & Discovers| Service_Registry
-    Payment_Service <-->|Registers & Discovers| Service_Registry
-    Document_Service <-->|Registers & Discovers| Service_Registry
-    Notification_Service <-->|Registers & Discovers| Service_Registry
-    
-    %% Service to DB Connections
-    User_Service --- User_DB
-    Startup_Service --- Startup_DB
-    Evaluation_Service --- Evaluation_DB
-    Verification_Service --- Verification_DB
-    Payment_Service --- Payment_DB
-    Document_Service --- Document_DB
-
-    %% Inter-Service Communication (Examples)
-    User_Service -.->|User Created Event| Notification_Service
-    Startup_Service -.->|Profile Submitted Event| Evaluation_Service
-    Verification_Service -.->|Investor Verified Event| Payment_Service
-    Verification_Service -.->|Investor Verified Event| Notification_Service
-```
+For more details, see the main project [`README.md`](../README.md)." 
